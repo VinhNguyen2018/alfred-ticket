@@ -23,6 +23,8 @@ fr:
 
         password: 'Mot de passe'
 
+        password_confirmation: 'Confirmation de mot de passe'
+
         remember_me: 'Se souvenir de moi'
 
         first_name: 'Prénom'
@@ -35,7 +37,6 @@ fr:
 
         gender: 'Genre'
 
-        Password_confirmation: 'Confirmation de mot de passe'
 
         # Signed_in_successfully: 'Connecté avec succès'
 
