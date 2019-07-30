@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_30_110849) do
+ActiveRecord::Schema.define(version: 2019_07_30_111930) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,6 +34,17 @@ ActiveRecord::Schema.define(version: 2019_07_30_110849) do
     t.string "photo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.string "status", default: "pending"
+    t.string "order_date"
+    t.bigint "user_id"
+    t.bigint "concert_event_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["concert_event_id"], name: "index_orders_on_concert_event_id"
+    t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -60,4 +71,6 @@ ActiveRecord::Schema.define(version: 2019_07_30_110849) do
   end
 
   add_foreign_key "concert_events", "concert_halls"
+  add_foreign_key "orders", "concert_events"
+  add_foreign_key "orders", "users"
 end
