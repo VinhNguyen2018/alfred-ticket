@@ -1,0 +1,2 @@
+class ConcertHall < ApplicationRecord
+end
