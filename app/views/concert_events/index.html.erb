@@ -1,0 +1,17 @@
+
+<div class="container">
+  <div class="row">
+<% @concerts.each do |concert| %>
+  <div class="col-6">
+    <div class="card-container" style="background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url('<%= image_url(concert.photo)%>');">
+      <div class="card-info">
+        <h2><%= concert.artist_name %></h2>
+        <p><%= concert.event_date %></p>
+        <p><%= concert.concert_hall.country %> - <%= concert.concert_hall.city %></p>
+        <p><%= concert.concert_hall.name %></p>
+      </div>
+    </div>
+  </div>
+<% end %>
+  </div>
+</div>

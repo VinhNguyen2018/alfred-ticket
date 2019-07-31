@@ -1,0 +1,14 @@
+.card-container {
+  height:400px;
+  width:330px;
+  background-size: cover;
+  background-position: center;
+  color:white;
+  border-radius:20px;
+}
+
+.container {
+  display:flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}

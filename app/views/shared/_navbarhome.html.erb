@@ -1,4 +1,4 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon2">
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <%= link_to "/", class: "navbar-brand" do %>
     <p>EZ RESA</p>
   <% end %>
@@ -11,7 +11,7 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <%= link_to "Concerts", "/", class: "nav-link active" %>
+        <%= link_to "Concerts", concerts_path, class: "nav-link active" %>
       </li>
       <li class="nav-item">
         <%= link_to "Compte", "/users/sign_in", class: "nav-link" %>

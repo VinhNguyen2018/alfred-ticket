@@ -37,8 +37,9 @@ puts "Creating concert halls"
 
 accor_hotel_arena = ConcertHall.new(
     name: "AccorHotels Arena",
-    address: "8 Boulevard de Bercy, 75012 Paris",
-    country: "France"
+    full_address: "8 Boulevard de Bercy, 75012 Paris",
+    country: "France",
+    city: "Paris"
   )
 accor_hotel_arena.save!
 
@@ -47,7 +48,7 @@ puts "Creating concert events"
 beyonce = ConcertEvent.new(
     event_date: "01/01/2020",
     artist_name: "Beyoncé",
-    photo: "../assets/images/beyonce.jpeg",
+    photo: "https://beninwebtv.com/wp-content/uploads/2019/06/beyonce_-e1513614279669.jpg",
     category: "Catégorie unique",
     price_cents: 10000,
     concert_hall: ConcertHall.first
@@ -58,7 +59,7 @@ beyonce.save!
 ed_sheeran = ConcertEvent.new(
     event_date: "01/01/2020",
     artist_name: "Ed Sheeran",
-    photo: "../assets/images/edsheeran.jpeg",
+    photo: "https://static.independent.co.uk/s3fs-public/thumbnails/image/2019/07/12/15/ed-sheeran.jpg?w968",
     category: "Catégorie unique",
     price_cents: 5000,
     concert_hall: ConcertHall.first
