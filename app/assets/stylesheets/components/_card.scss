@@ -5,10 +5,31 @@
   background-position: center;
   color:white;
   border-radius:20px;
+  position:relative;
 }
 
 .container {
   display:flex;
   justify-content: space-between;
   align-items: flex-start;
+  margin-top:30px;
+}
+
+.card-info {
+  position: absolute;
+  bottom: 1rem;
+  width: 90%;
+  left: 1.1rem;
+}
+
+.card-description {
+ display: flex;
+}
+
+.description-text {
+
+}
+
+.description-icon {
+  margin-right:10px;
 }

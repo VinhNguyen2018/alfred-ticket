@@ -1,4 +1,4 @@
-
+<%= render 'shared/navbar' %>
 <div class="container">
   <div class="row">
 <% @concerts.each do |concert| %>
@@ -6,9 +6,30 @@
     <div class="card-container" style="background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url('<%= image_url(concert.photo)%>');">
       <div class="card-info">
         <h2><%= concert.artist_name %></h2>
-        <p><%= concert.event_date %></p>
-        <p><%= concert.concert_hall.country %> - <%= concert.concert_hall.city %></p>
-        <p><%= concert.concert_hall.name %></p>
+        <div class="card-description">
+          <div class="description-icon">
+            <i class="far fa-calendar-times"></i>
+          </div>
+          <div class="description-text">
+            <%= concert.event_date %>
+          </div>
+        </div>
+        <div class="card-description">
+          <div class="description-icon">
+            <i class="fas fa-globe-europe"></i>
+          </div>
+          <div class="description-text">
+            <%= concert.concert_hall.country %> - <%= concert.concert_hall.city %>
+          </div>
+        </div>
+        <div class="card-description">
+          <div class="description-icon">
+            <i class="fas fa-map-marker-alt"></i>
+          </div>
+          <div class="description-text">
+            <%= concert.concert_hall.name %>
+          </div>
+        </div>
       </div>
     </div>
   </div>

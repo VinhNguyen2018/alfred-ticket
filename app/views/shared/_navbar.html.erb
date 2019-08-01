@@ -1,31 +1,25 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon2">
+<div class="navbar navbar-expand-sm navbar-dark navbar-lewagon">
   <%= link_to "/", class: "navbar-brand" do %>
-    <p>EZ RESA</p>
+    <p>EZ-RESA</p>
   <% end %>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <i class="fas fa-caret-down lightgrey"></i>
+    <span class="navbar-toggler-icon"></span>
   </button>
 
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <%= link_to "Concerts", "/", class: "nav-link active" %>
+        <%= link_to "Concerts", concerts_path, class: "nav-link" %>
       </li>
       <li class="nav-item">
-        <%= link_to "Compte", "/users/sign_in", class: "nav-link" %>
+        <%= link_to "Compte", user_session_path, class: "nav-link" %>
       </li>
       <li class="nav-item">
-        <%= link_to "Contact", "/", class: "nav-link" %>
-      </li>
-      <li class="nav-item dropdown">
-        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-          <%= link_to "About me", "#", class: "dropdown-item" %>
-          <%= link_to "Projects", "#", class: "dropdown-item" %>
-          <%= link_to "Contact", "#", class: "dropdown-item" %>
-        </div>
+        <%= link_to "FAQ & Contact", "#", class: "nav-link" %>
       </li>
     </ul>
   </div>
 </div>
+
