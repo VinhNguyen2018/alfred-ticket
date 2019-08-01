@@ -51,7 +51,8 @@ beyonce = ConcertEvent.new(
     photo: "https://beninwebtv.com/wp-content/uploads/2019/06/beyonce_-e1513614279669.jpg",
     category: "Catégorie unique",
     price_cents: 10000,
-    concert_hall: ConcertHall.first
+    concert_hall: ConcertHall.first,
+    event_end_booking: "01/01/2021"
   )
 
 beyonce.save!
@@ -62,7 +63,8 @@ ed_sheeran = ConcertEvent.new(
     photo: "https://static.independent.co.uk/s3fs-public/thumbnails/image/2019/07/12/15/ed-sheeran.jpg?w968",
     category: "Catégorie unique",
     price_cents: 5000,
-    concert_hall: ConcertHall.first
+    concert_hall: ConcertHall.first,
+    event_end_booking: "01/01/2021"
   )
 
 ed_sheeran.save!
