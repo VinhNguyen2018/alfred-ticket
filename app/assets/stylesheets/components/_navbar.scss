@@ -9,9 +9,14 @@
 .navbar-lewagon {
   justify-content: space-between !important;
   background: black;
-  position:absolute;
-  top:0;
   color:white;
+}
+
+.transparent {
+  background: transparent;
+  position:absolute !important;
+  width:100%;
+  top:0;
 }
 
 .navbar-lewagon .navbar-collapse {
