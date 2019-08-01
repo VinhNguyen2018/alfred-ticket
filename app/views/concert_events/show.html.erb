@@ -1,0 +1,37 @@
+<%= render 'shared/navbar' %>
+  <div class="row grey">
+    <div class="container">
+      <div class="col-8 left-column">
+        <%= image_tag @concert.photo, class: "avatar-large" %>
+        <h1><%= @concert.artist_name %> en concert</h1>
+        <h2><%= @concert.event_date %></h2>
+        <div><%= @concert.concert_hall.name %></div>
+        <div><%= @concert.concert_hall.city %>, <%= @concert.concert_hall.country %></div>
+      </div>
+      <div class="col-4 right-column">
+        <h4>Fermeture du service dans :</h4>
+        <div id="deadline" style="display:none"><%= @end_date  %></div>
+        <div id="clockdiv">
+          <div>
+            <span class="days"></span>
+            <div class="smalltext">JOURS</div>
+          </div>
+          <div>
+            <span class="hours"></span>
+            <div class="smalltext">HEURES</div>
+          </div>
+          <div>
+            <span class="minutes"></span>
+            <div class="smalltext">MIN</div>
+          </div>
+          <div>
+            <span class="seconds"></span>
+            <div class="smalltext">SEC</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<div class="container">
+</div>

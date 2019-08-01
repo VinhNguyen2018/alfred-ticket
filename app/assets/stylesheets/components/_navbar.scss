@@ -10,12 +10,12 @@
   justify-content: space-between !important;
   background: black;
   color:white;
+  width:100%;
 }
 
 .transparent {
   background: transparent;
   position:absolute !important;
-  width:100%;
   top:0;
 }
 
@@ -51,11 +51,11 @@
 }
 
 .fixed{
-  position: fixed;
+  position: fixed !important;
   top:0;
   z-index:1000;
-  background-color: rgba(50, 50, 50,0.85);
-  height:55px;
+  background-color: rgba(50, 50, 50, 0.80);
+  // height:55px;
   transition-duration: 3s;
 }
 
