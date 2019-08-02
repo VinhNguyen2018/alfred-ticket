@@ -52,7 +52,7 @@ beyonce = ConcertEvent.new(
     category: "Catégorie unique",
     price_cents: 10000,
     concert_hall: ConcertHall.first,
-    event_end_booking: "01/09/2019"
+    event_end_booking: "2019-01-09"
   )
 
 beyonce.save!
@@ -64,7 +64,7 @@ ed_sheeran = ConcertEvent.new(
     category: "Catégorie unique",
     price_cents: 5000,
     concert_hall: ConcertHall.first,
-    event_end_booking: "01/09/2019"
+    event_end_booking: "2019-09-01"
   )
 
 ed_sheeran.save!
