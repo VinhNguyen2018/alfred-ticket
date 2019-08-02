@@ -33,3 +33,39 @@
 .description-icon {
   margin-right:10px;
 }
+
+.card-plan {
+  border: solid;
+  border-radius:20px;
+  margin-bottom:16px;
+  ul {
+    list-style:none;
+  }
+}
+
+.card-plan-content {
+  display:flex;
+  align-items:center;
+  padding:12px;
+  li {
+    font-size:12px;
+    text-align: justify;
+    text-justify: auto;
+    max-width: 92%;
+  }
+  i {
+    padding-right:10px;
+  }
+}
+
+.card-plan h2 {
+  padding:1.5rem 3rem 0rem;
+  font-size:28px;
+}
+
+.img-plan {
+  max-width:100%;
+  padding: 1.5rem 3rem 0rem;
+}
+
+

@@ -39,7 +39,8 @@ accor_hotel_arena = ConcertHall.new(
     name: "AccorHotels Arena",
     full_address: "8 Boulevard de Bercy, 75012 Paris",
     country: "France",
-    city: "Paris"
+    city: "Paris",
+    photo: "https://external-preview.redd.it/3wVNA4ilbTWAv3IuOqZB68YKhA9HGhcHjV_0pAiRers.png?width=960&crop=smart&auto=webp&s=b288a8643556298e5686b377df776ff0acbfb7fd"
   )
 accor_hotel_arena.save!
 
