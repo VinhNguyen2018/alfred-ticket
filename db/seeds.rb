@@ -11,6 +11,10 @@ puts "destroy all concert halls"
 
 ConcertHall.destroy_all
 
+puts "destroy all categories"
+
+Category.destroy_all
+
 puts "destroy all users"
 
 User.destroy_all
@@ -44,15 +48,6 @@ accor_hotel_arena = ConcertHall.new(
   )
 accor_hotel_arena.save!
 
-beyonce_cat1 = Category.new {
-  type: "CAT1",
-  price_cents: 10000
-}
-
-beyonce_cat2 = Category.new {
-  type: "CAT1",
-  price_cents: 10000
-}
 
 puts "Creating concert events"
 
@@ -60,7 +55,6 @@ beyonce = ConcertEvent.new(
     event_date: "01/01/2020",
     artist_name: "Beyoncé",
     photo: "https://beninwebtv.com/wp-content/uploads/2019/06/beyonce_-e1513614279669.jpg",
-    category: "Catégorie unique",
     concert_hall: ConcertHall.first,
     event_end_booking: "2019-01-09"
   )
@@ -71,12 +65,40 @@ ed_sheeran = ConcertEvent.new(
     event_date: "01/01/2020",
     artist_name: "Ed Sheeran",
     photo: "https://static.independent.co.uk/s3fs-public/thumbnails/image/2019/07/12/15/ed-sheeran.jpg?w968",
-    category: "Catégorie unique",
-    price_cents: 5000,
     concert_hall: ConcertHall.first,
     event_end_booking: "2019-09-01"
   )
 
 ed_sheeran.save!
+
+puts "Creating categories"
+
+beyonce_cat1 = Category.new(
+  name: "CAT1",
+  price_cents: 10000,
+  concert_event: ConcertEvent.first
+)
+beyonce_cat1.save!
+
+beyonce_cat2 = Category.new(
+  name: "CAT2",
+  price_cents: 20000,
+  concert_event: ConcertEvent.first
+)
+beyonce_cat2.save!
+
+ed_cat1 = Category.new(
+  name: "Carré or",
+  price_cents: 10000,
+  concert_event: ConcertEvent.second
+)
+ed_cat1.save!
+
+ed_cat2 = Category.new(
+  name: "Fossé",
+  price_cents: 20000,
+  concert_event: ConcertEvent.second
+)
+ed_cat2.save!
 
 puts "finished"
