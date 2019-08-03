@@ -83,9 +83,10 @@
     <div class="col-6">
       <div class="card-plan">
         <h2>Prix et catégories disponibles</h2>
+        <div class="sub-title">(Ces prix incluent nos frais de réservation et la TVA)</div>
         <ul>
           <% @concert.categories.each do |concert| %>
-            <li><%= concert.name %> - <%= humanized_money_with_symbol(concert.price_cents) %></li>
+            <li><%= concert.name %> - <%= humanized_money(concert.price) %> <%= currency_symbol %></li>
           <% end %>
         </ul>
       </div>
