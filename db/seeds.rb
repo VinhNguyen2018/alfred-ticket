@@ -44,6 +44,16 @@ accor_hotel_arena = ConcertHall.new(
   )
 accor_hotel_arena.save!
 
+beyonce_cat1 = Category.new {
+  type: "CAT1",
+  price_cents: 10000
+}
+
+beyonce_cat2 = Category.new {
+  type: "CAT1",
+  price_cents: 10000
+}
+
 puts "Creating concert events"
 
 beyonce = ConcertEvent.new(
@@ -51,7 +61,6 @@ beyonce = ConcertEvent.new(
     artist_name: "Beyoncé",
     photo: "https://beninwebtv.com/wp-content/uploads/2019/06/beyonce_-e1513614279669.jpg",
     category: "Catégorie unique",
-    price_cents: 10000,
     concert_hall: ConcertHall.first,
     event_end_booking: "2019-01-09"
   )

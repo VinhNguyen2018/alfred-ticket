@@ -10,21 +10,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_01_151119) do
+ActiveRecord::Schema.define(version: 2019_08_03_075552) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "categories", force: :cascade do |t|
+    t.string "type"
+    t.integer "price_cents", default: 0, null: false
+    t.string "price_currency", default: "EUR", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "concert_events", force: :cascade do |t|
     t.string "event_date"
     t.string "artist_name"
-    t.string "category"
     t.string "photo"
     t.bigint "concert_hall_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "price_cents", default: 0, null: false
     t.string "event_end_booking"
+    t.bigint "category_id"
+    t.index ["category_id"], name: "index_concert_events_on_category_id"
     t.index ["concert_hall_id"], name: "index_concert_events_on_concert_hall_id"
   end
 
@@ -72,6 +80,7 @@ ActiveRecord::Schema.define(version: 2019_08_01_151119) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "concert_events", "categories"
   add_foreign_key "concert_events", "concert_halls"
   add_foreign_key "orders", "concert_events"
   add_foreign_key "orders", "users"
