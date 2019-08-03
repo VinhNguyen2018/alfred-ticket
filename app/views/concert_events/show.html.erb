@@ -83,6 +83,11 @@
     <div class="col-6">
       <div class="card-plan">
         <h2>Prix et catégories disponibles</h2>
+        <ul>
+          <% @concert.categories.each do |concert| %>
+            <li><%= concert.name %> - <%= humanized_money_with_symbol(concert.price_cents) %></li>
+          <% end %>
+        </ul>
       </div>
     </div>
   </div>

@@ -75,28 +75,28 @@ puts "Creating categories"
 
 beyonce_cat1 = Category.new(
   name: "CAT1",
-  price_cents: 10000,
+  price: 299,
   concert_event: ConcertEvent.first
 )
 beyonce_cat1.save!
 
 beyonce_cat2 = Category.new(
   name: "CAT2",
-  price_cents: 20000,
+  price: 399,
   concert_event: ConcertEvent.first
 )
 beyonce_cat2.save!
 
 ed_cat1 = Category.new(
   name: "Carré or",
-  price_cents: 10000,
+  price: 200,
   concert_event: ConcertEvent.second
 )
 ed_cat1.save!
 
 ed_cat2 = Category.new(
   name: "Fossé",
-  price_cents: 20000,
+  price: 300,
   concert_event: ConcertEvent.second
 )
 ed_cat2.save!
