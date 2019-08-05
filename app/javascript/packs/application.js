@@ -12,7 +12,7 @@ if (document.getElementById('deadline')) {
   initializeClock('clockdiv', deadline);
 }
 
-import { backgroundColorOnClick } from '../components/background_color_category';
+import { selectCategory } from '../components/select_category';
 if (document.querySelector(".border-top")) {
-  backgroundColorOnClick();
+  selectCategory();
 }

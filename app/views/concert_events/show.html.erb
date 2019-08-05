@@ -85,19 +85,19 @@
         <h2>Prix et catégories disponibles :</h2>
         <div class="sub-title">(Ces prix incluent nos frais de réservation et la TVA)</div>
         <div class="border-top selected">
-          <div class="inline">
+          <label class="inline">
             <input id="selected-category" type="radio" name="selected-category" checked/>
               <div class="left-category"><%= @concert.categories.first.name %></div>
-              <div class="right-category"><%= humanized_money(@concert.categories.first.price) %><%= currency_symbol %></div>
-          </div>
+              <div class="right-category selected-price"><%= humanized_money(@concert.categories.first.price) %><%= currency_symbol %></div>
+          </label>
         </div>
         <% @concert.categories[1..-1].each do |concert| %>
           <div class="border-top">
-            <div class="inline">
+            <label class="inline">
               <input id="selected-category" type="radio" name="selected-category" />
                 <div class="left-category"><%= concert.name %></div>
                 <div class="right-category"><%= humanized_money(concert.price) %><%= currency_symbol %></div>
-            </div>
+            </label>
           </div>
         <% end %>
         <h2 class="no-hover">Nombres de places :</h2>
