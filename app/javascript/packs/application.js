@@ -11,3 +11,8 @@ if (document.getElementById('deadline')) {
   getTimeRemaining(deadline);
   initializeClock('clockdiv', deadline);
 }
+
+import { backgroundColorOnClick } from '../components/background_color_category';
+if (document.querySelector(".border-top")) {
+  backgroundColorOnClick();
+}
