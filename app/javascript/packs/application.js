@@ -23,3 +23,8 @@ if (document.getElementById('calculation-total-price')) {
   updateOnclick();
   updateOnChange();
 }
+
+import { submitOrder } from '../components/submit_order';
+if (document.querySelector(".submit-order")) {
+  submitOrder();
+}

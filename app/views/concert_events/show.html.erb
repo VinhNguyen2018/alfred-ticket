@@ -86,7 +86,7 @@
         <div class="sub-title">(Ces prix incluent nos frais de réservation et la TVA)</div>
         <div class="border-top selected">
           <label class="inline">
-            <input id="selected-category" type="radio" name="selected-category" checked/>
+              <%= radio_button_tag(:category, @concert.categories.first, true , class: "selected-category") %>
               <div class="left-category selected-category"><%= @concert.categories.first.name %></div>
               <div class="right-category selected-price"><%= humanized_money(@concert.categories.first.price) %><%= currency_symbol %></div>
           </label>
@@ -94,7 +94,7 @@
         <% @concert.categories[1..-1].each do |concert| %>
           <div class="border-top">
             <label class="inline">
-              <input id="selected-category" type="radio" name="selected-category" />
+                <%= radio_button_tag(:category, concert, class: "selected-category") %>
                 <div class="left-category"><%= concert.name %></div>
                 <div class="right-category"><%= humanized_money(concert.price) %><%= currency_symbol %></div>
             </label>
@@ -102,25 +102,34 @@
         <% end %>
         <h2 class="no-hover">Nombres de places :</h2>
         <div class="selected-quantity">
-          <select id="quantity" name="quantity-tickets" style="width:50px;" class="custom-select">
-            <option>1</option>
+          <%= select_tag "quantity",
+           raw(
+            "<option>1</option>
             <option>2</option>
             <option>3</option>
             <option>4</option>
-            <option>5</option>
-          </select>
+            <option>5</option>"),
+            class: "custom-select",
+              :onchange => "'#{orders_path}', {'_method':'post', 'orders[quantity]':this.value}" %>
         </div>
         <h2>Prix total TTC :</h2>
         <div id="calculation-total-price">
-            <span class="category"></span>
+            <a class="category"></a>
             :
-            <span class="quantity"></span>
+            <a class="quantity"></a>
             x
-            <span class="price"></span>
+            <a class="price"></a>
             <%= currency_symbol %> =
-            <span class="total"></span>
+            <a class="total"></a>
             <%= currency_symbol %>
         </div>
+        <%= link_to "tessst", orders_path, class: "btn btn-primary submit-order", method: :post  %>
+        <button class="btn btn-primary submit-order">test</button>
+        <%= form_tag orders_path do %>
+          <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+          <%= hidden_field_tag 'concert_event_id', @concert.id %>
+          <%= submit_tag 'Commander', class: 'btn btn-primary submit-order' %>
+        <% end %>
       </div>
     </div>
   </div>
