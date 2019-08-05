@@ -16,3 +16,10 @@ import { selectCategory } from '../components/select_category';
 if (document.querySelector(".border-top")) {
   selectCategory();
 }
+
+import { initializeCalculation, updateOnclick, updateOnChange } from '../components/calculate_total_price';
+if (document.getElementById('calculation-total-price')) {
+  initializeCalculation();
+  updateOnclick();
+  updateOnChange();
+}

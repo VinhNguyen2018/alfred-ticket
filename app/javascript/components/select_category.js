@@ -1,15 +1,20 @@
 const selectCategory = () => {
-  const categories = document.querySelectorAll(".border-top");
-  categories.forEach((item) => {
+  const blocks = document.querySelectorAll(".border-top");
+  blocks.forEach((item) => {
     item.addEventListener("click", (event) => {
       const prices = document.querySelectorAll(".right-category");
+      const categories = document.querySelectorAll(".left-category");
       prices.forEach((price) => {
         price.classList.remove("selected-price");
       })
-      categories.forEach((item) => {
+      categories.forEach((category) => {
+        category.classList.remove("selected-category");
+      })
+      blocks.forEach((item) => {
         item.classList.remove("selected");
       });
       item.classList.add("selected");
+      item.querySelector(".left-category").classList.add("selected-category");
       item.querySelector(".right-category").classList.add("selected-price");
     });
   });
