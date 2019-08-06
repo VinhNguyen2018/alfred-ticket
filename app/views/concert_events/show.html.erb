@@ -3,7 +3,7 @@
     <div class="container">
       <div class="col-8 left-column">
         <%= image_tag @concert.photo, class: "avatar-large" %>
-        <h1><%= @concert.artist_name %> en concert</h1>
+        <h1 id="artist_name"><%= @concert.artist_name %></h1>
         <h2><%= @concert.event_date %></h2>
         <div><%= @concert.concert_hall.name %></div>
         <div><%= @concert.concert_hall.city %>, <%= @concert.concert_hall.country %></div>
@@ -103,14 +103,15 @@
         <h2 class="no-hover">Nombres de places :</h2>
         <div class="selected-quantity">
           <%= select_tag "quantity",
-           raw(
-            "<option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>"),
-            class: "custom-select",
-              :onchange => "'#{orders_path}', {'_method':'post', 'orders[quantity]':this.value}" %>
+            raw(
+              "<option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>"),
+              class: "custom-select"
+
+          %>
         </div>
         <h2>Prix total TTC :</h2>
         <div id="calculation-total-price">
@@ -123,10 +124,11 @@
             <a class="total"></a>
             <%= currency_symbol %>
         </div>
-        <%= link_to "tessst", orders_path, class: "btn btn-primary submit-order", method: :post  %>
+        <h1>test</h1>
         <button class="btn btn-primary submit-order">test</button>
-        <%= form_tag orders_path do %>
-          <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+        <h1>test</h1>
+        <%= form_tag concerts_path do %>
+          <%= hidden_field_tag :authenticity_token, form_authenticity_token %>z
           <%= hidden_field_tag 'concert_event_id', @concert.id %>
           <%= submit_tag 'Commander', class: 'btn btn-primary submit-order' %>
         <% end %>

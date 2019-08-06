@@ -1,12 +1,17 @@
 class OrdersController < ApplicationController
   # skip_before_action :verify_authenticity_token
   def create
-    @user = current_user
     concert = ConcertEvent.find(params[:concert_event_id])
+    # respond_to do |format|
+    #   format.html { redirect_to concert_path(concert.id) }
+    #   format.js # <-- will render `app/views/reviews/create.js.erb`
+    # end
+    @user = current_user
+    p params
     date = Date.today.to_s(:long)
     price = params[:total_price]
-    category = params[:category]
     quantity = params[:quantity]
+    category = params[:category]
     Order.create!()
   end
 
