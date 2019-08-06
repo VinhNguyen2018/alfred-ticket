@@ -24,7 +24,7 @@ if (document.getElementById('calculation-total-price')) {
   updateOnChange();
 }
 
-import { submitOrder } from '../components/submit_order';
-if (document.querySelector(".submit-order")) {
-  submitOrder();
-}
+// import { submitOrder } from '../components/submit_order';
+// if (document.querySelector(".submit-order")) {
+//   submitOrder();
+// }
