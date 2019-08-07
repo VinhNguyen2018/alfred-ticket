@@ -86,7 +86,7 @@
         <div class="sub-title">(Ces prix incluent nos frais de réservation et la TVA)</div>
         <div class="border-top selected">
           <label class="inline">
-              <%= radio_button_tag(:category, @concert.categories.first, true , class: "selected-category") %>
+              <input id="selected-category" type="radio" name="selected-category" checked/>
               <div class="left-category selected-category"><%= @concert.categories.first.name %></div>
               <div class="right-category selected-price"><%= humanized_money(@concert.categories.first.price) %><%= currency_symbol %></div>
           </label>
@@ -94,7 +94,7 @@
         <% @concert.categories[1..-1].each do |concert| %>
           <div class="border-top">
             <label class="inline">
-                <%= radio_button_tag(:category, concert, class: "selected-category") %>
+                <input id="selected-category" type="radio" name="selected-category" />
                 <div class="left-category"><%= concert.name %></div>
                 <div class="right-category"><%= humanized_money(concert.price) %><%= currency_symbol %></div>
             </label>
@@ -124,14 +124,9 @@
             <a class="total"></a>
             <%= currency_symbol %>
         </div>
-        <h1>test</h1>
-        <button class="btn btn-primary submit-order">test</button>
-        <h1>test</h1>
-        <%= form_tag concerts_path do %>
-          <%= hidden_field_tag :authenticity_token, form_authenticity_token %>z
-          <%= hidden_field_tag 'concert_event_id', @concert.id %>
-          <%= submit_tag 'Commander', class: 'btn btn-primary submit-order' %>
-        <% end %>
+        <div class="card-button">
+          <%= link_to "Commander", root_path, class: "submit-order fullwidth" %>
+        </div>
       </div>
     </div>
   </div>

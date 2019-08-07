@@ -40,7 +40,6 @@ function createOrder() {
     body: JSON.stringify(body),
     credentials: 'same-origin'
   }).then(r => r.json());
-
 }
 
 const submitOrder = () => {

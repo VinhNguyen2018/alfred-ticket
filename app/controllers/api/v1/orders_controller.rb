@@ -10,17 +10,7 @@ class Api::V1::OrdersController < ActionController::Base
       quantity: params[:quantity],
       category_id: @category.id
     )
-    if @order.save
-      respond_to do |format|
-        format.html { redirect_to root_path }
-        format.js { render json: @order.to_json } # <-- will render `app/views/reviews/create.js.erb`
-      end
-    else
-      respond_to do |format|
-        format.html { redirect_to concert_path(@concert.id) }
-        format.js { render json: @order.errors.to_json }
-      end
-    end
+    @order.save
   end
 
   private
