@@ -1,0 +1,21 @@
+.infobulle {
+  position: relative;  /* les .infobulle deviennent référents */
+  cursor: help;
+}
+
+.infobulle:hover::after {
+  content: attr(aria-label);  /* on affiche aria-label */
+  position: absolute;
+  top: -3.4em;
+  left: 6em;
+  font-size:12px;
+  transform: translateX(-20%); /* on centre horizontalement  */
+  z-index: 1; /* pour s'afficher au dessus des éléments en position relative */
+  // white-space: nowrap;  /* on interdit le retour à la ligne*/
+  padding: 5px 14px;
+  background: white;
+  border-radius: 4px;
+  font-weight: normal;
+  box-shadow: 1px 1px 12px #555;
+  width:250px;
+}

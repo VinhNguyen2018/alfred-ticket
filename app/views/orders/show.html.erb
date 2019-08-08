@@ -1,3 +1,152 @@
 <%= render 'shared/navbar' %>
 <%= render 'shared/wrapper' %>
 
+<div class="container">
+  <div class="row" style="width:100%;">
+    <form id="formID" action="/payments" method="post">
+      <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+    </form>
+    <div class="col-6">
+      <div class="card-plan">
+        <div class="checkout-block">
+          <h2>Information personnelles</h2>
+        </div>
+        <div class="checkout-block">
+          <label for="firstname" class="checkout-label">Prénom *</label>
+          <div class="checkout-input">
+            <input type="text" name="firstname" value="<%= @user.first_name %>" form="formID" placeholder="Veuillez saisir les informations" required>
+          </div>
+        </div>
+        <div class="checkout-block">
+          <label for="lastname" class="checkout-label">Nom *</label>
+          <div class="checkout-input">
+            <input type="text" name="lastname" value="<%= @user.last_name %>" form="formID" placeholder="Veuillez saisir les informations" required>
+          </div>
+        </div>
+        <div class="checkout-block">
+          <label for="email" class="checkout-label">Votre adresse e-mail *</label>
+          <div class="checkout-input">
+            <input type="text" name="email" value="<%= @user.email %>" form="formID" placeholder="Veuillez saisir les informations" required>
+          </div>
+        </div>
+      </div>
+      <div class="card-plan">
+        <div class="checkout-block">
+          <h2>Adresse de livraison</h2>
+        </div>
+        <div class="checkout-block">
+          <label for="address" class="checkout-label">Adresse *</label>
+          <div class="checkout-input">
+            <input type="text" name="address" value="<%= @user.address %>" form="formID" placeholder="Veuillez saisir les informations" required>
+          </div>
+        </div>
+        <div class="checkout-block">
+          <label for="address_bis" class="checkout-label">Complément d'adresse</label>
+          <div class="checkout-input">
+            <input type="text" name="address_bis" value="" form="formID" placeholder="Veuillez saisir les informations">
+          </div>
+        </div>
+        <div class="checkout-block">
+          <label for="zip_code" class="checkout-label">Code Postal *</label>
+          <div class="checkout-input">
+            <input type="text" name="zip_code" value="<%= @user.zip_code %>" form="formID" placeholder="Veuillez saisir les informations" required>
+          </div>
+        </div>
+        <div class="checkout-block">
+          <label for="city" class="checkout-label">Ville *</label>
+          <div class="checkout-input">
+            <input type="text" name="city" value="<%= @user.city %>" form="formID" placeholder="Veuillez saisir les informations" required>
+          </div>
+        </div>
+        <div class="checkout-block">
+          <label for="country" class="checkout-label">Pays *</label>
+          <div class="checkout-input">
+            <input type="text" name="country" value="<%= @user.country %>" form="formID" placeholder="Veuillez saisir les informations" required>
+          </div>
+        </div>
+        <div class="checkout-block">
+          <label for="phone_number" class="checkout-label">Téléphone *</label>
+          <div class="checkout-input">
+            <input type="text" name="phone_number" value="<%= @user.phone_number %>" form="formID" placeholder="Veuillez saisir les informations" required>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="card-plan hidden">
+        <div class="checkout-block">
+          <h2>Adresse de facturation</h2>
+        </div>
+        <div class="checkout-block">
+          <label for="address" class="checkout-label">Adresse *</label>
+          <div class="checkout-input">
+            <input type="text" name="address" value="<%= @user.address %>" form="formID" placeholder="Veuillez saisir les informations" required>
+          </div>
+        </div>
+        <div class="checkout-block">
+          <label for="address_bis" class="checkout-label">Complément d'adresse</label>
+          <div class="checkout-input">
+            <input type="text" name="address_bis" value="" form="formID" placeholder="Veuillez saisir les informations">
+          </div>
+        </div>
+        <div class="checkout-block">
+          <label for="zip_code" class="checkout-label">Code Postal *</label>
+          <div class="checkout-input">
+            <input type="text" name="zip_code" value="<%= @user.zip_code %>" form="formID" placeholder="Veuillez saisir les informations" required>
+          </div>
+        </div>
+        <div class="checkout-block">
+          <label for="city" class="checkout-label">Ville *</label>
+          <div class="checkout-input">
+            <input type="text" name="city" value="<%= @user.city %>" form="formID" placeholder="Veuillez saisir les informations" required>
+          </div>
+        </div>
+        <div class="checkout-block">
+          <label for="country" class="checkout-label">Pays *</label>
+          <div class="checkout-input">
+            <input type="text" name="country" value="<%= @user.country %>" form="formID" placeholder="Veuillez saisir les informations" required>
+          </div>
+        </div>
+        <div class="checkout-block">
+          <label for="phone_number" class="checkout-label">Téléphone *</label>
+          <div class="checkout-input">
+            <input type="text" name="phone_number" value="<%= @user.phone_number %>" form="formID" placeholder="Veuillez saisir les informations" required>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-6">
+        <div class="card-plan">
+          <div class="checkout-block">
+            <h2>Détails de la commande</h2>
+          </div>
+          <div class="checkout-block">
+            <div class="checkout-title">Artiste: </div>
+            <div class="checkout-content"><%= @concert.artist_name %></div>
+          </div>
+          <div class="checkout-block">
+            <div class="checkout-title">Date: </div>
+            <div class="checkout-content"><%= @event_date %></div>
+          </div>
+          <div class="checkout-block">
+            <div class="checkout-title">Salle/stade: </div>
+            <div class="checkout-content"><%= @concert.concert_hall.name %></div>
+          </div>
+          <div class="checkout-block">
+            <div class="checkout-title">Nombres de billet(s):<span class="infobulle" aria-label="Le service fast delivery vous assure la réception des places dans un délai maximum de 2 semaines après la mise en vente officielle"><i class="fas fa-info-circle"></i></span> </div>
+            <div class="checkout-content"><%= @order.quantity %> x <%= @category.name %> (<%= @category.price %><%= currency_symbol %>) = <%= @order.quantity*@category.price %><%= currency_symbol %></div>
+          </div>
+          <div class="checkout-block">
+            <div class="checkout-title">Frais de réservation:<span class="infobulle" aria-label="Les frais de gestion sont calculés par billet"><i class="fas fa-info-circle"></i></span></div>
+            <div class="checkout-content"><%= @order.quantity %> x <%= @management_fees %><%= currency_symbol %></div>
+          </div>
+
+          <div class="checkout-block">
+            <div class="checkout-title">Support de livraison </div>
+            <div class="checkout-content">E-billet: 0.00<%= currency_symbol %></div>
+          </div>
+
+        </div>
+    </div>
+  </div>
+</div>

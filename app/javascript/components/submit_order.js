@@ -1,22 +1,5 @@
 const BASE_URL = '/api/v1/orders';
 
-// function callExecuter() {
-//   var price = document.querySelector(".price").innerText;
-//   var quantity = document.querySelector(".quantity").innerText;
-//   var category = document.querySelector(".category").innerText;
-//   Rails.ajax({
-//     url: "/orders",
-//     type: "POST",
-//     data: `total_price=${price}&quantity=${quantity}&category=${category}`,
-//     success: function(data) {
-//       console.log(data);
-//     }
-//   });
-// }
-
-
-// $(document).on("click","#executer-button",callExecuter());
-
 function createOrder() {
   const artist = document.getElementById("artist_name").innerText
   const price = parseInt(document.querySelector(".price").innerText);

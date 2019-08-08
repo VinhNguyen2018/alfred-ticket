@@ -59,3 +59,12 @@ fr:
     #     building: 'Exemple: Bâtiment 2A'
 
     #     street_number: 'Uniquement le numéro de rue'
+    date:
+      formats:
+        default: "%d-%m-%Y"
+        short: "%b %d"
+        long: "%A %e %B %Y"
+
+    time:
+      formats:
+        short: "arrrround %H'ish"

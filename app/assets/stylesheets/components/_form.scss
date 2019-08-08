@@ -1,3 +1,5 @@
+//form from devise
+
 .form-session {
   width: 30%;
   background-color: white;
@@ -26,4 +28,25 @@
   color: black;
   background-color: white;
   padding:50px;
+}
+
+//form from show order
+
+.checkout-input input[type=text] {
+  width:100%;
+  font-size:15px;
+  padding: 10px 12px;
+  // margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  box-sizing: border-box;
+  box-shadow: 1px 1px 5px #555;
+  &:focus {
+    outline:none;
+  }
+}
+
+.checkout-label {
+  font-size:15px;
 }

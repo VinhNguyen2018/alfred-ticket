@@ -2,9 +2,14 @@ class OrdersController < ApplicationController
   before_action :find_concert_and_category, only: [ :create ]
 
   def show
+    @user = current_user
     @order = Order.find(params[:id])
     @concert = @order.concert_event
     @end_date = @concert.event_end_booking
+    @event_date = @concert.event_date
+    @category = @order.category
+    @management_fees = @order.quantity * @category.price * 40 / 100
+
   end
 
   def create

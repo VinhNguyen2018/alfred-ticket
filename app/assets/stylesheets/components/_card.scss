@@ -35,13 +35,18 @@
 }
 
 .card-plan {
-  border: solid;
+  box-shadow: 1px 1px 5px #555;
   border-radius:20px;
   margin-bottom:16px;
+  padding-bottom:12px;
   ul {
     list-style:none;
   }
 }
+
+// .hidden{
+//   display:none;
+// }
 
 .card-plan-content {
   display:flex;
@@ -67,6 +72,24 @@
   padding:1.5rem 3rem 0rem;
   font-size:28px;
   margin-bottom:0;
+}
+
+.checkout-block {
+  padding:0rem 3rem 0rem;
+  margin-bottom:10px;
+}
+
+.checkout-block h2{
+  margin-bottom:1.5rem;
+  padding-left: 0;
+}
+
+.checkout-title{
+  font-weight:bold;
+}
+
+.checkout-content{
+  font-size:15px;
 }
 
 .no-hover {
@@ -127,11 +150,12 @@
   padding:1rem 3rem 0rem;
 }
 
-.custom-select {
+
+.card-button {
 
 }
 
-.card-button {
+.custom-select {
 
 }
 

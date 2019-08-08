@@ -1,11 +1,15 @@
 <div class="row grey">
   <div class="container">
     <div class="col-8 left-column">
-      <%= image_tag @concert.photo, class: "avatar-large" %>
-      <h1 id="artist_name"><%= @concert.artist_name %></h1>
-      <h2><%= @concert.event_date %></h2>
-      <div><%= @concert.concert_hall.name %></div>
-      <div><%= @concert.concert_hall.city %>, <%= @concert.concert_hall.country %></div>
+      <div style="margin-right:20px;">
+        <%= image_tag @concert.photo, class: "avatar-large" %>
+      </div>
+      <div>
+        <h1 id="artist_name"><%= @concert.artist_name %></h1>
+        <h2><%= @concert.event_date %></h2>
+        <div><%= @concert.concert_hall.name %></div>
+        <div><%= @concert.concert_hall.city %>, <%= @concert.concert_hall.country %></div>
+      </div>
     </div>
     <div class="col-4 right-column">
       <h4>Fermeture du service dans :</h4>
