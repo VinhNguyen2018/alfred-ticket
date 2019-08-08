@@ -49,4 +49,3 @@ const submitOrder = () => {
   })
 }
 
-export { submitOrder };

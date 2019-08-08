@@ -5,7 +5,7 @@ scrollMoveNav();
 
 import { initializeClock } from '../components/countdown';
 import { getTimeRemaining } from '../components/countdown';
-if (document.getElementById('deadline')) {
+if (document.getElementById('clockdiv')) {
   const end_date = document.getElementById("deadline");
   const deadline = new Date(Date.parse(end_date.innerText));
   getTimeRemaining(deadline);
@@ -24,7 +24,7 @@ if (document.getElementById('calculation-total-price')) {
   updateOnChange();
 }
 
-import { submitOrder } from '../components/submit_order';
-if (document.querySelector(".submit-order")) {
-  submitOrder();
-}
+// import { submitOrder } from '../components/submit_order';
+// if (document.querySelector(".submit-order")) {
+//   submitOrder();
+// }

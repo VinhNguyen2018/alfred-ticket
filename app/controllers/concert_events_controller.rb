@@ -5,6 +5,7 @@ class ConcertEventsController < ApplicationController
   end
 
   def show
+    @order = Order.new
     @concert = ConcertEvent.find(params[:id])
     @end_date = @concert.event_end_booking
   end

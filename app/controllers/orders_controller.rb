@@ -1,13 +1,19 @@
-class Api::V1::OrdersController < ActionController::Base
+class OrdersController < ApplicationController
   before_action :find_concert_and_category, only: [ :create ]
-  respond_to :html, :json
+
+  def show
+    @order = Order.find(params[:id])
+    @concert = @order.concert_event
+    @end_date = @concert.event_end_booking
+  end
+
   def create
     @user = current_user
     @order = Order.new(
       user_id: @user.id,
       concert_event_id: @concert.id,
       order_date: Date.today.to_s(:long),
-      quantity: params[:quantity],
+      quantity: params[:order][:quantity],
       category_id: @category.id
     )
     @order.save
@@ -17,7 +23,7 @@ class Api::V1::OrdersController < ActionController::Base
   private
 
   def find_concert_and_category
-    @concert = ConcertEvent.find_by(artist_name: params[:artist_name])
-    @category = Category.find_by(name: params[:category], concert_event_id: @concert.id)
+    @category = Category.find(params[:category][:id])
+    @concert = ConcertEvent.find(@category.concert_event_id)
   end
 end

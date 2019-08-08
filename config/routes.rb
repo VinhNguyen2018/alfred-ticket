@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   resources :concert_events, only: [:index, :show], as: "concerts", :path => "/concerts"
-  # resources :orders, only: [:new, :create]
+  resources :orders, only: [:show, :create]
 
   namespace :api, defaults: { format: :json } do
     namespace :v1 do

@@ -1,37 +1,5 @@
 <%= render 'shared/navbar' %>
-  <div class="row grey">
-    <div class="container">
-      <div class="col-8 left-column">
-        <%= image_tag @concert.photo, class: "avatar-large" %>
-        <h1 id="artist_name"><%= @concert.artist_name %></h1>
-        <h2><%= @concert.event_date %></h2>
-        <div><%= @concert.concert_hall.name %></div>
-        <div><%= @concert.concert_hall.city %>, <%= @concert.concert_hall.country %></div>
-      </div>
-      <div class="col-4 right-column">
-        <h4>Fermeture du service dans :</h4>
-        <div id="deadline" style="display:none"><%= @end_date  %></div>
-        <div id="clockdiv">
-          <div>
-            <span class="days"></span>
-            <div class="smalltext">JOURS</div>
-          </div>
-          <div>
-            <span class="hours"></span>
-            <div class="smalltext">HEURES</div>
-          </div>
-          <div>
-            <span class="minutes"></span>
-            <div class="smalltext">MIN</div>
-          </div>
-          <div>
-            <span class="seconds"></span>
-            <div class="smalltext">SEC</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+<%= render 'shared/wrapper' %>
 
 <div class="container">
   <div class="row">
@@ -84,17 +52,20 @@
       <div class="card-plan">
         <h2>Prix et catégories disponibles :</h2>
         <div class="sub-title">(Ces prix incluent nos frais de réservation et la TVA)</div>
+        <form id="formID" action="/orders" method="post">
+          <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+        </form>
         <div class="border-top selected">
           <label class="inline">
-              <input id="selected-category" type="radio" name="selected-category" checked/>
-              <div class="left-category selected-category"><%= @concert.categories.first.name %></div>
+              <input id="selected-category" type="radio" name="category[id]" value="<%= @concert.categories.first.id %>" form="formID" checked/>
+              <div for="" class="left-category selected-category"><%= @concert.categories.first.name %></div>
               <div class="right-category selected-price"><%= humanized_money(@concert.categories.first.price) %><%= currency_symbol %></div>
           </label>
         </div>
         <% @concert.categories[1..-1].each do |concert| %>
           <div class="border-top">
             <label class="inline">
-                <input id="selected-category" type="radio" name="selected-category" />
+                <input id="selected-category" type="radio" name="category[id]" value="<%= concert.id %>" form="formID"/>
                 <div class="left-category"><%= concert.name %></div>
                 <div class="right-category"><%= humanized_money(concert.price) %><%= currency_symbol %></div>
             </label>
@@ -102,16 +73,13 @@
         <% end %>
         <h2 class="no-hover">Nombres de places :</h2>
         <div class="selected-quantity">
-          <%= select_tag "quantity",
-            raw(
-              "<option>1</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-              <option>5</option>"),
-              class: "custom-select"
-
-          %>
+          <select id="quantity" name="order[quantity]" style="width:50px;" class="custom-select" form="formID">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
         </div>
         <h2>Prix total TTC :</h2>
         <div id="calculation-total-price">
@@ -125,7 +93,7 @@
             <%= currency_symbol %>
         </div>
         <div class="card-button">
-          <%= link_to "Commander", root_path, class: "submit-order fullwidth" %>
+          <input type="submit" name="commit" value="Commander" form="formID" class="submit-order fullwidth" />
         </div>
       </div>
     </div>
