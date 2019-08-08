@@ -50,3 +50,11 @@
 .checkout-label {
   font-size:15px;
 }
+
+#permitted + label{
+  cursor: pointer;
+}
+
+#permitted {
+  cursor: pointer;
+}

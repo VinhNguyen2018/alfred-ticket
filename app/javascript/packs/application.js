@@ -23,6 +23,11 @@ if (document.getElementById('calculation-total-price')) {
   updateOnclick();
   updateOnChange();
 }
+import { toggleHideInvoicingAdress } from '../components/toggle_hide_invoicing_address';
+if (document.getElementById("permitted")) {
+  toggleHideInvoicingAdress();
+}
+
 
 // import { submitOrder } from '../components/submit_order';
 // if (document.querySelector(".submit-order")) {

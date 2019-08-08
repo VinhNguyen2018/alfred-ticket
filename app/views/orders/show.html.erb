@@ -35,82 +35,84 @@
           <h2>Adresse de livraison</h2>
         </div>
         <div class="checkout-block">
-          <label for="address" class="checkout-label">Adresse *</label>
+          <label for="shipping_address" class="checkout-label">Adresse *</label>
           <div class="checkout-input">
-            <input type="text" name="address" value="<%= @user.address %>" form="formID" placeholder="Veuillez saisir les informations" required>
+            <input type="text" name="shipping_address" value="<%= @user.address %>" form="formID" placeholder="Veuillez saisir les informations" required>
           </div>
         </div>
         <div class="checkout-block">
-          <label for="address_bis" class="checkout-label">Complément d'adresse</label>
+          <label for="shipping_address_bis" class="checkout-label">Complément d'adresse</label>
           <div class="checkout-input">
-            <input type="text" name="address_bis" value="" form="formID" placeholder="Veuillez saisir les informations">
+            <input type="text" name="shipping_address_bis" value="" form="formID" placeholder="Veuillez saisir les informations">
           </div>
         </div>
         <div class="checkout-block">
-          <label for="zip_code" class="checkout-label">Code Postal *</label>
+          <label for="shipping_zip_code" class="checkout-label">Code Postal *</label>
           <div class="checkout-input">
-            <input type="text" name="zip_code" value="<%= @user.zip_code %>" form="formID" placeholder="Veuillez saisir les informations" required>
+            <input type="text" name="shipping_zip_code" value="<%= @user.zip_code %>" form="formID" placeholder="Veuillez saisir les informations" required>
           </div>
         </div>
         <div class="checkout-block">
-          <label for="city" class="checkout-label">Ville *</label>
+          <label for="shipping_city" class="checkout-label">Ville *</label>
           <div class="checkout-input">
-            <input type="text" name="city" value="<%= @user.city %>" form="formID" placeholder="Veuillez saisir les informations" required>
+            <input type="text" name="shipping_city" value="<%= @user.city %>" form="formID" placeholder="Veuillez saisir les informations" required>
           </div>
         </div>
         <div class="checkout-block">
-          <label for="country" class="checkout-label">Pays *</label>
+          <label for="shipping_country" class="checkout-label">Pays *</label>
           <div class="checkout-input">
-            <input type="text" name="country" value="<%= @user.country %>" form="formID" placeholder="Veuillez saisir les informations" required>
+            <input type="text" name="shipping_country" value="<%= @user.country %>" form="formID" placeholder="Veuillez saisir les informations" required>
           </div>
         </div>
         <div class="checkout-block">
-          <label for="phone_number" class="checkout-label">Téléphone *</label>
+          <label for="shipping_phone_number" class="checkout-label">Téléphone *</label>
           <div class="checkout-input">
-            <input type="text" name="phone_number" value="<%= @user.phone_number %>" form="formID" placeholder="Veuillez saisir les informations" required>
+            <input type="text" name="shipping_phone_number" value="<%= @user.phone_number %>" form="formID" placeholder="Veuillez saisir les informations" required>
           </div>
+        </div>
+        <div class="checkout-block">
+          <input id="permitted" type="checkbox" checked>
+          <label for="permitted">L'adresse de facturation est la même</label>
         </div>
       </div>
-
-
-      <div class="card-plan hidden">
+      <div class="card-plan invoicing hidden">
         <div class="checkout-block">
           <h2>Adresse de facturation</h2>
         </div>
         <div class="checkout-block">
-          <label for="address" class="checkout-label">Adresse *</label>
+          <label for="billing_address" class="checkout-label">Adresse *</label>
           <div class="checkout-input">
-            <input type="text" name="address" value="<%= @user.address %>" form="formID" placeholder="Veuillez saisir les informations" required>
+            <input type="text" name="billing_address" value="<%= @user.address %>" form="formID" placeholder="Veuillez saisir les informations" required>
           </div>
         </div>
         <div class="checkout-block">
-          <label for="address_bis" class="checkout-label">Complément d'adresse</label>
+          <label for="billing_address_bis" class="checkout-label">Complément d'adresse</label>
           <div class="checkout-input">
-            <input type="text" name="address_bis" value="" form="formID" placeholder="Veuillez saisir les informations">
+            <input type="text" name="billing_address_bis" value="" form="formID" placeholder="Veuillez saisir les informations">
           </div>
         </div>
         <div class="checkout-block">
-          <label for="zip_code" class="checkout-label">Code Postal *</label>
+          <label for="billing_zip_code" class="checkout-label">Code Postal *</label>
           <div class="checkout-input">
-            <input type="text" name="zip_code" value="<%= @user.zip_code %>" form="formID" placeholder="Veuillez saisir les informations" required>
+            <input type="text" name="billing_zip_code" value="<%= @user.zip_code %>" form="formID" placeholder="Veuillez saisir les informations" required>
           </div>
         </div>
         <div class="checkout-block">
-          <label for="city" class="checkout-label">Ville *</label>
+          <label for="billing_city" class="checkout-label">Ville *</label>
           <div class="checkout-input">
-            <input type="text" name="city" value="<%= @user.city %>" form="formID" placeholder="Veuillez saisir les informations" required>
+            <input type="text" name="billing_city" value="<%= @user.city %>" form="formID" placeholder="Veuillez saisir les informations" required>
           </div>
         </div>
         <div class="checkout-block">
-          <label for="country" class="checkout-label">Pays *</label>
+          <label for="billing_country" class="checkout-label">Pays *</label>
           <div class="checkout-input">
-            <input type="text" name="country" value="<%= @user.country %>" form="formID" placeholder="Veuillez saisir les informations" required>
+            <input type="text" name="billing_country" value="<%= @user.country %>" form="formID" placeholder="Veuillez saisir les informations" required>
           </div>
         </div>
         <div class="checkout-block">
-          <label for="phone_number" class="checkout-label">Téléphone *</label>
+          <label for="billing_phone_number" class="checkout-label">Téléphone *</label>
           <div class="checkout-input">
-            <input type="text" name="phone_number" value="<%= @user.phone_number %>" form="formID" placeholder="Veuillez saisir les informations" required>
+            <input type="text" name="billing_phone_number" value="<%= @user.phone_number %>" form="formID" placeholder="Veuillez saisir les informations" required>
           </div>
         </div>
       </div>

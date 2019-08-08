@@ -1,6 +1,7 @@
 .infobulle {
   position: relative;  /* les .infobulle deviennent référents */
   cursor: help;
+  cursor: pointer;
 }
 
 .infobulle:hover::after {
