@@ -6,6 +6,8 @@
     <form id="formID" action="/payments" method="post">
       <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
     </form>
+    <div id="unit-price" style="display:none;"><%= @category.price %></div>
+    <div id="quantity-order"style="display:none;"><%= @order.quantity %></div>
     <div class="col-6">
       <div class="card-plan">
         <div class="checkout-block">
@@ -154,10 +156,26 @@
             </div>
           </div>
           <div class="checkout-block">
-            <div class="checkout-title">Support de livraison </div>
+            <div class="checkout-title">Support de livraison</div>
             <div class="checkout-content">E-billet: 0.00<%= currency_symbol %></div>
           </div>
 
+          <div class="checkout-block">
+            <div class="checkout-title">TVA</div>
+            <div class="checkout-content">
+              <span class="TVA"><%= (@order.quantity*@category.price+@management_fees)*20/100 %></span>
+              <%= currency_symbol %>
+            </div>
+          </div>
+          <div class="checkout-block">
+            <div class="checkout-title">Total TTC</div>
+            <div class="checkout-content">
+              <span class="TTC">
+                <%= (@order.quantity*@category.price+@management_fees)*1.2  %>
+              </span>
+              <%= currency_symbol %>
+            </div>
+          </div>
         </div>
     </div>
   </div>

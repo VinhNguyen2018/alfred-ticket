@@ -9,7 +9,6 @@ class OrdersController < ApplicationController
     @event_date = @concert.event_date
     @category = @order.category
     @management_fees = @order.quantity * @category.price * 40 / 100
-
   end
 
   def create
