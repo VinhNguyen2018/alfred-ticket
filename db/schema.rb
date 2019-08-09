@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_06_133152) do
+ActiveRecord::Schema.define(version: 2019_08_09_220023) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 2019_08_06_133152) do
     t.bigint "concert_event_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "fast_delivery_fee_cents", default: 0, null: false
     t.index ["concert_event_id"], name: "index_categories_on_concert_event_id"
   end
 
