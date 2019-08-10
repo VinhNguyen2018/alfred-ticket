@@ -28,12 +28,14 @@ francois = User.new(
     last_name: "Nguyen",
     gender: "M",
     address: "16 villa Gaudelet",
+    adress_bis: "",
     email: "francois@gmail.com",
     password: "ahahahah",
     country: "France",
     zip_code: "75011",
     city: "Paris",
-    phone_number: "0629971405"
+    phone_number: "0629971405",
+    admin: true
   )
 francois.save!
 
