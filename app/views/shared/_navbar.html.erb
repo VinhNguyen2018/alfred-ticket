@@ -7,19 +7,45 @@
     <span class="navbar-toggler-icon"></span>
   </button>
 
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <%= link_to "Concerts", concerts_path, class: "nav-link" %>
-      </li>
-      <li class="nav-item">
-        <%= link_to "Compte", user_session_path, class: "nav-link" %>
-      </li>
-      <li class="nav-item">
-        <%= link_to "FAQ & Contact", "#", class: "nav-link" %>
-      </li>
-    </ul>
-  </div>
+<% if user_signed_in? %>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <%= link_to "Concerts", concerts_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "FAQ & Contact", "#", class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <div class="toolbar-divider"></div>
+        </li>
+        <li class="nav-item">
+          <%= link_to current_user.first_name, user_session_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to destroy_user_session_path, method: :delete, class: "nav-link" do %>
+            <i class="fa fa-sign-out-alt"></i>  <%= t(".sign_out", default: "Se déconnecter")  %>
+          <% end %>
+        </li>
+      </ul>
+    </div>
+  <% else %>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <%= link_to "Concerts", concerts_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "FAQ & Contact", "#", class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <div class="toolbar-divider"></div>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Compte", user_session_path, class: "nav-link" %>
+        </li>
+      </ul>
+    </div>
+  <% end %>
 </div>
 

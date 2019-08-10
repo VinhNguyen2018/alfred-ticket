@@ -1,6 +1,10 @@
 <%= render 'shared/navbar' %>
 <%= render 'shared/wrapper' %>
 
+<% if policy(ConcertEvent).create? %>
+  <p>test</p>
+<% end %>
+
 <div class="container">
   <div class="row">
     <div class="col-6">

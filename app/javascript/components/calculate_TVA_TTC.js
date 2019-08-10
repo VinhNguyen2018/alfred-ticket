@@ -1,10 +1,9 @@
-const quantity = parseInt(document.getElementById("quantity-order").innerText);
-const price = parseFloat(parseFloat(document.getElementById("unit-price").innerText.replace(',','.')).toFixed(2));
-const managementFees = parseFloat(parseFloat(quantity*price*40/100).toFixed(2));
-const blockVat = document.querySelector(".TVA");
-const blockTtc = document.querySelector(".TTC");
-
 const calculateFastDelivery = () => {
+  const quantity = parseInt(document.getElementById("quantity-order").innerText);
+  const price = parseFloat(parseFloat(document.getElementById("unit-price").innerText.replace(',','.')).toFixed(2));
+  const managementFees = parseFloat(parseFloat(quantity*price*40/100).toFixed(2));
+  const blockVat = document.querySelector(".TVA");
+  const blockTtc = document.querySelector(".TTC");
   const FastDeliveryFees = 5;
   const vatAmount = parseFloat((quantity*price+managementFees+FastDeliveryFees)*20/100).toFixed(2);
   const totalPrice = parseFloat(quantity*price+managementFees+FastDeliveryFees+vatAmount).toFixed(2);
@@ -15,6 +14,11 @@ const calculateFastDelivery = () => {
 }
 
 const calculateStandardDelivery = () => {
+  const quantity = parseInt(document.getElementById("quantity-order").innerText);
+  const price = parseFloat(parseFloat(document.getElementById("unit-price").innerText.replace(',','.')).toFixed(2));
+  const managementFees = parseFloat(parseFloat(quantity*price*40/100).toFixed(2));
+  const blockVat = document.querySelector(".TVA");
+  const blockTtc = document.querySelector(".TTC");
   const vatAmount = parseFloat((quantity*price+managementFees)*20/100).toFixed(2);
   const totalPrice = parseFloat(quantity*price+managementFees+vatAmount).toFixed(2);
   const frVatAmount = vatAmount.replace('.',',');

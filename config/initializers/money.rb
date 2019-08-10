@@ -6,7 +6,7 @@ MoneyRails.configure do |config|
 
   # To set the default currency
   #
-  # config.default_currency = :eur
+  config.default_currency = :eur
 
 
   # Set default bank object
@@ -80,13 +80,13 @@ MoneyRails.configure do |config|
   # Default value is nil meaning "ignore this option".
   # Example:
   #
-  config.default_format = {
-    no_cents_if_whole: nil,
-    symbol: nil,
-    sign_after_symbol: true,
-    decimal_mark: ".",
-    thousands_separator: " ",
-  }
+  # config.default_format = {
+  #   no_cents_if_whole: nil,
+  #   symbol: nil,
+  #   sign_after_symbol: true,
+  #   decimal_mark: ".",
+  #   thousands_separator: " ",
+  # }
 
   # Set default raise_error_on_money_parsing option
   # It will be raise error if assigned different currency

@@ -1,5 +1,4 @@
 import "bootstrap";
-require("@rails/ujs").start
 import { scrollMoveNav } from '../components/navbar_scroll';
 scrollMoveNav();
 
