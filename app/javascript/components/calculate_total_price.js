@@ -2,14 +2,16 @@ function getCatAndPriceAndQuantity() {
   var category = document.querySelector(".left-category.selected-category").innerText;
   var quantity = document.getElementById('quantity');
   var quantityTicket = parseInt(quantity.options[document.getElementById('quantity').selectedIndex].text);
-  var price = document.querySelector(".right-category.selected-price");
-  var priceTicket = parseInt(price.innerText);
-  var totalPrice = quantityTicket * priceTicket;
+  var price = document.querySelector(".right-category.selected-price").innerText.replace(',','.');
+  var priceTicket = parseFloat(price);
+  var totalPrice = parseFloat(quantityTicket * priceTicket);
+  var frPriceTicket = String(priceTicket).replace('.',',');
+  var frTotalPrice = String(totalPrice).replace('.',',');
   return {
     'category': category,
-    'total': totalPrice,
+    'total': frTotalPrice,
     'quantity': quantityTicket,
-    'price': priceTicket,
+    'price': frPriceTicket,
   };
 }
 

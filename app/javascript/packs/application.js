@@ -28,10 +28,9 @@ if (document.getElementById("permitted")) {
   toggleHideInvoicingAdress();
 }
 
-import { selectFastDelivery, selectStandardDelivery } from '../components/calculate_TVA_TTC';
+import { applyCalculationDelivery } from '../components/calculate_TVA_TTC';
 if (document.querySelector(".TVA")) {
-  selectFastDelivery();
-  selectStandardDelivery();
+  applyCalculationDelivery();
 }
 // import { submitOrder } from '../components/submit_order';
 // if (document.querySelector(".submit-order")) {

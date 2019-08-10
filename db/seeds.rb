@@ -91,7 +91,7 @@ beyonce_cat2.save!
 
 ed_cat1 = Category.new(
   name: "Carré or",
-  price: 200,
+  price: 200.99,
   concert_event: ConcertEvent.second,
   fast_delivery_fee: 10
 )

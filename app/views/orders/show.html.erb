@@ -138,7 +138,7 @@
           </div>
           <div class="checkout-block">
             <div class="checkout-title">Nombres de billet(s): </div>
-            <div class="checkout-content"><%= @order.quantity %> x <%= @category.name %> (<%= @category.price %><%= currency_symbol %>) = <%= @order.quantity*@category.price %><%= currency_symbol %></div>
+            <div class="checkout-content"><%= @order.quantity %> x <%= @category.name %> (<%= humanized_money(@category.price) %><%= currency_symbol %>) = <%= humanized_money(@order.quantity*@category.price) %><%= currency_symbol %></div>
           </div>
           <div class="checkout-block">
             <div class="checkout-title">Frais de réservation:<span class="infobulle" aria-label="Les frais de gestion sont calculés par billet."><i class="fas fa-info-circle"></i></span></div>
