@@ -142,28 +142,28 @@
           </div>
           <div class="checkout-block">
             <div class="checkout-title">Frais de réservation:<span class="infobulle" aria-label="Les frais de gestion sont calculés par billet."><i class="fas fa-info-circle"></i></span></div>
-            <div class="checkout-content"><%= @order.quantity %> x <%= @management_fees %><%= currency_symbol %></div>
+            <div class="checkout-content"><%= @order.quantity %> x <%= humanized_money(@management_fees) %><%= currency_symbol %></div>
           </div>
           <div class="checkout-block">
             <div class="checkout-title">Type de livraison </div>
             <div class="checkout-content">
               <input id="fast-delivery" type="radio" name="payments[delivery]" value="fast" form="formID">
-              <label for="fast-delivery">Fast delivery: 5.00<%= currency_symbol %><span class="infobulle" aria-label="Le service fast delivery vous assure la réception des places dans un délai maximum de 2 semaines après la mise en vente officielle."><i class="fas fa-info-circle"></i></span></label>
+              <label for="fast-delivery">Fast delivery: 5,00<%= currency_symbol %><span class="infobulle" aria-label="Le service fast delivery vous assure la réception des places dans un délai maximum de 2 semaines après la mise en vente officielle."><i class="fas fa-info-circle"></i></span></label>
             </div>
             <div class="checkout-content">
               <input id="standard-delivery" type="radio" name="payments[delivery]" value="fast" form="formID" checked>
-              <label for="standard-delivery">Standard: 0.00<%= currency_symbol %><span class="infobulle" aria-label="La livraison standard vous assure la réception des billets dans un délai maximum de 2 semaines avant le début du concert."><i class="fas fa-info-circle"></i></span></label>
+              <label for="standard-delivery">Standard: 0,00<%= currency_symbol %><span class="infobulle" aria-label="La livraison standard vous assure la réception des billets dans un délai maximum de 2 semaines avant le début du concert."><i class="fas fa-info-circle"></i></span></label>
             </div>
           </div>
           <div class="checkout-block">
             <div class="checkout-title">Support de livraison</div>
-            <div class="checkout-content">E-billet: 0.00<%= currency_symbol %></div>
+            <div class="checkout-content">E-billet: 0,00<%= currency_symbol %></div>
           </div>
 
           <div class="checkout-block">
             <div class="checkout-title">TVA</div>
             <div class="checkout-content">
-              <span class="TVA"><%= (@order.quantity*@category.price+@management_fees)*20/100 %></span>
+              <span class="TVA"><%= humanized_money((@order.quantity*@category.price+@management_fees)*20/100) %></span>
               <%= currency_symbol %>
             </div>
           </div>
@@ -171,7 +171,7 @@
             <div class="checkout-title">Total TTC</div>
             <div class="checkout-content">
               <span class="TTC">
-                <%= (@order.quantity*@category.price+@management_fees)*1.2  %>
+                <%= humanized_money((@order.quantity*@category.price+@management_fees)*1.2)  %>
               </span>
               <%= currency_symbol %>
             </div>
