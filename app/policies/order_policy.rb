@@ -1,19 +1,15 @@
-class ConcertEventPolicy < ApplicationPolicy
+class OrderPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
       scope.all
     end
   end
 
-  def index?
-    true
-  end
-
   def show?
-    true
+    record.user == user
   end
 
   def create?
-    user.admin?
+    record.user == user
   end
 end

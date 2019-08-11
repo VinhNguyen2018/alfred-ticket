@@ -4,6 +4,7 @@ class OrdersController < ApplicationController
   def show
     @user = current_user
     @order = Order.find(params[:id])
+    authorize @order
     @concert = @order.concert_event
     @end_date = @concert.event_end_booking
     @event_date = @concert.event_date
@@ -12,14 +13,13 @@ class OrdersController < ApplicationController
   end
 
   def create
-    @user = current_user
-    @order = Order.new(
-      user_id: @user.id,
+    @order = current_user.orders.build(
       concert_event_id: @concert.id,
       order_date: Date.today.to_s(:long),
       quantity: params[:order][:quantity],
       category_id: @category.id
     )
+    authorize @order
     @order.save
     redirect_to order_path(@order.id)
   end
@@ -29,5 +29,6 @@ class OrdersController < ApplicationController
   def find_concert_and_category
     @category = Category.find(params[:category][:id])
     @concert = ConcertEvent.find(@category.concert_event_id)
+    authorize @concert
   end
 end
