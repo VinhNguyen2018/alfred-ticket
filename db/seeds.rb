@@ -39,6 +39,21 @@ francois = User.new(
   )
 francois.save!
 
+andre = User.new(
+    first_name: "Andre",
+    last_name: "Martins",
+    gender: "M",
+    address: "16 villa Gaudelet",
+    adress_bis: "",
+    email: "andre@gmail.com",
+    password: "ahahahah",
+    country: "France",
+    zip_code: "75011",
+    city: "Paris",
+    phone_number: "0629971405",
+  )
+andre.save!
+
 puts "Creating concert halls"
 
 accor_hotel_arena = ConcertHall.new(

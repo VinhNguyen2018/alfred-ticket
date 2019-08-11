@@ -1,0 +1,39 @@
+<%= render 'shared/navbar' %>
+<div class="row grey">
+  <div class="container">
+    <div>
+      <h1>Mon compte</h1>
+    </div>
+    <div>
+      <button class="button-ghost active">Vos commandes</button>
+      <button class="button-ghost" href="#">Votre profil</button>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div id="user-orders">
+    <h1>Informations de compte</h1>
+    <div class="card-dashboard">
+      <h2>Bonjour <%= @user.first_name.capitalize %></h2>
+      <div class="card-dashboard-content">Ravi de vous retrouver!</div>
+      <div class="card-dashboard-bottom">Il y a actuellement <%= @orders.count %> commande(s) rattachée(s) à votre compte client, dont vous trouverez le détail ci-dessous :</div>
+    </div>
+    <h1>Vos commandes</h1>
+    <% if @orders == [] %>
+      <div class="card-dashboard">
+
+      </div>
+    <% else %>
+      <div class="card-dashboard">
+
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<div class="container hidden">
+  <div id="user-infos">
+    <h1>Informations de compte</h1>
+  </div>
+</div>

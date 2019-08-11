@@ -21,3 +21,24 @@
   display:block;
   text-align:center; /*This will result in centering the link text, which is probably what you want -brianjohnsondesign.com*/
 }
+
+.button-ghost {
+  color: #4A4A4A;
+  border: 1px solid #4A4A4A;
+  padding: 12px 32px;
+  border-radius: 50px;
+  font-weight: bold;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+  margin:50px 0;
+}
+
+.button-ghost.active {
+  color: white;
+  background:black;
+  opacity: 1;
+}
+
+.button-ghost:hover {
+  opacity: 1;
+}
