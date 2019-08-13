@@ -58,3 +58,32 @@
 #permitted {
   cursor: pointer;
 }
+
+//form from dashboard user edit
+
+.checkout-input input[type=date] {
+  width:100%;
+  font-size:15px;
+  padding: 10px 12px;
+  // margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  box-sizing: border-box;
+  box-shadow: 1px 1px 5px #555;
+  &:focus {
+    outline:none;
+  }
+}
+
+.checkout-input input {
+  margin-right:10px;
+}
+
+.checkout-block label {
+  font-weight:bold;
+}
+
+.dashboard-radio label {
+  font-weight:normal;
+}

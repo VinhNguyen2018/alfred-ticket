@@ -30,7 +30,7 @@
   font-weight: bold;
   opacity: 0.6;
   transition: opacity 0.3s ease;
-  margin:50px 0;
+  // margin:50px 0;
 }
 
 .button-ghost.active {
@@ -41,4 +41,18 @@
 
 .button-ghost:hover {
   opacity: 1;
+}
+
+.buttons-dashboard {
+  margin:40px 0;
+  float:right;
+}
+
+@media (max-width: 640px) {
+
+.buttons-dashboard {
+  margin:40px 0;
+  float:left;
+}
+
 }

@@ -210,6 +210,18 @@
 
 // dashboard
 
+#user-infos {
+  width:80%;
+}
+
+#user-orders {
+  width:80%;
+}
+
+.wrapper {
+  display:block !important;
+}
+
 .card-dashboard {
   box-shadow: 1px 1px 5px #555;
   border-radius:20px;
@@ -221,6 +233,10 @@
 .card-dashboard-bottom {
   margin-top: 20px;
   white-space: nowrap;
+}
+
+.orange {
+  color:#ed9107;
 }
 
 @media (max-width: 640px) {

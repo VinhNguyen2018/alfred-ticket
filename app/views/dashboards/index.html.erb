@@ -1,10 +1,10 @@
 <%= render 'shared/navbar' %>
 <div class="row grey">
-  <div class="container">
+  <div class="container wrapper">
     <div>
       <h1>Mon compte</h1>
     </div>
-    <div>
+    <div class="buttons-dashboard">
       <button class="button-ghost active">Vos commandes</button>
       <button class="button-ghost" href="#">Votre profil</button>
     </div>
@@ -22,18 +22,177 @@
     <h1>Vos commandes</h1>
     <% if @orders == [] %>
       <div class="card-dashboard">
-
+        <div>
+          <i class="fas fa-exclamation-circle"></i> Vous n'avez aucune commande pour l'instant
+        </div>
+        <div>
+          Ne vous inquiètez pas, vous pouvez commander via l’onglet ’Concerts’ juste au-dessus.
+        </div>
       </div>
     <% else %>
       <div class="card-dashboard">
-
+        <% @orders.each do |order| %>
+        <div class="card-dashboard-content">
+          <%= order.order_date %> -
+          <%= order.concert_event.artist_name %> -
+          <%= order.quantity%>
+          x
+          <%= order.category.name %>
+          <%= order.status %>
+        </div>
+        <% end %>
       </div>
     <% end %>
   </div>
 </div>
 
-<div class="container hidden">
+<div class="container ">
   <div id="user-infos">
+    <form id="formID" action="/users" method="patch">
+      <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+    </form>
     <h1>Informations de compte</h1>
+    <div class="card-dashboard">
+      <div class="checkout-block">
+        <label for="e-mail" class="checkout-label">Votre addresse e-mail *</label>
+        <div class="checkout-input">
+          <input type="text" name="users[e-mail]" value="<%= @user.email %>" form="formID" placeholder="Veuillez saisir les informations" >
+        </div>
+      </div>
+      <div class="checkout-block">
+        <label for="password" class="checkout-label">Changez de mot de passe *</label>
+        <div class="checkout-input">
+          <input type="text" name="users[password]" form="formID" placeholder="Veuillez saisir les informations" >
+        </div>
+      </div>
+      <div class="checkout-block">
+        <label for="confirmed-password" class="checkout-label">Confirmez le mot de passe *</label>
+        <div class="checkout-input">
+          <input type="text" name="users[confirmed-password]" form="formID" placeholder="Veuillez saisir les informations" >
+        </div>
+      </div>
+    </div>
+    <h1>Informations personnelles</h1>
+    <div class="card-dashboard">
+      <div class="checkout-block">
+        <div class="checkout-input">
+          <label for="gender" class="checkout-label">Civilité *</label>
+        </div>
+        <div class="dashboard-radio">
+          <% if @user.gender == "F" %>
+            <input type="radio" name="users[gender-F]" form="formID" checked>
+            <label for="gender" class="checkout-label">Madame</label>
+          <% else %>
+            <input type="radio" name="users[gender-F]" form="formID">
+            <label for="gender" class="checkout-label">Madame</label>
+          <% end %>
+        </div>
+        <div class="dashboard-radio">
+          <% if @user.gender == "M" %>
+            <input type="radio" name="users[gender-M]" form="formID" checked>
+            <label for="gender" class="checkout-label">Monsieur</label>
+          <% else %>
+            <input type="radio" name="users[gender-M]" form="formID">
+            <label for="gender" class="checkout-label">Monsieur</label>
+          <% end %>
+        </div>
+      </div>
+      <div class="checkout-block">
+        <label for="last_name" class="checkout-label">Nom *</label>
+        <div class="checkout-input">
+          <input type="text" name="users[last-name]" value="<%= @user.last_name %>" form="formID" placeholder="Veuillez saisir les informations" >
+        </div>
+      </div>
+      <div class="checkout-block">
+        <label for="first_name" class="checkout-label">Prénom *</label>
+        <div class="checkout-input">
+          <input type="text" name="users[first-name]" value="<%= @user.first_name %>" form="formID" placeholder="Veuillez saisir les informations" >
+        </div>
+      </div>
+      <div class="checkout-block">
+        <label for="birth_date" class="checkout-label">Date de naissance *</label>
+        <div class="checkout-input">
+          <input type="date" name="users[birth_date]" value="<%= @user.birth_date %>" form="formID" placeholder="Veuillez saisir les informations" >
+        </div>
+      </div>
+    </div>
+    <h1>Addresse de livraison</h1>
+    <div class="card-dashboard">
+      <div class="checkout-block">
+        <label for="address" class="checkout-label">Addresse *</label>
+        <div class="checkout-input">
+          <input type="text" name="users[address]" value="<%= @user.address %>" form="formID" placeholder="Veuillez saisir les informations" >
+        </div>
+      </div>
+      <div class="checkout-block">
+        <label for="address_bis" class="checkout-label">Addresse complémentaire</label>
+        <div class="checkout-input">
+          <input type="text" name="users[address_bis]" value="<%= @user.address_bis %>" form="formID" placeholder="Veuillez saisir les informations" >
+        </div>
+      </div>
+      <div class="checkout-block">
+        <label for="zip_code" class="checkout-label">Code postal *</label>
+        <div class="checkout-input">
+          <input type="text" name="users[zip_code]" value="<%= @user.zip_code %>" form="formID" placeholder="Veuillez saisir les informations" >
+        </div>
+      </div>
+      <div class="checkout-block">
+        <label for="city" class="checkout-label">Ville *</label>
+        <div class="checkout-input">
+          <input type="text" name="users[city]" value="<%= @user.city %>" form="formID" placeholder="Veuillez saisir les informations" >
+        </div>
+      </div>
+      <div class="checkout-block">
+        <label for="country" class="checkout-label">Pays *</label>
+        <div class="checkout-input">
+          <input type="text" name="users[country]" value="<%= @user.country %>" form="formID" placeholder="Veuillez saisir les informations" >
+        </div>
+      </div>
+      <div class="checkout-block">
+        <label for="phone_number" class="checkout-label">Téléphone *</label>
+        <div class="checkout-input">
+          <input type="text" name="users[phone_number]" value="<%= @user.phone_number %>" form="formID" placeholder="Veuillez saisir les informations" >
+        </div>
+      </div>
+    </div>
+    <h1>Addresse de facturation</h1>
+    <div class="card-dashboard">
+      <div class="checkout-block">
+        <label for="address" class="checkout-label">Addresse *</label>
+        <div class="checkout-input">
+          <input type="text" name="billings[address]" value="<%= @user.address %>" form="formID" placeholder="Veuillez saisir les informations" >
+        </div>
+      </div>
+      <div class="checkout-block">
+        <label for="address_bis" class="checkout-label">Addresse complémentaire</label>
+        <div class="checkout-input">
+          <input type="text" name="billings[address_bis]" value="<%= @user.address_bis %>" form="formID" placeholder="Veuillez saisir les informations" >
+        </div>
+      </div>
+      <div class="checkout-block">
+        <label for="zip_code" class="checkout-label">Code postal *</label>
+        <div class="checkout-input">
+          <input type="text" name="billings[zip_code]" value="<%= @user.zip_code %>" form="formID" placeholder="Veuillez saisir les informations" >
+        </div>
+      </div>
+      <div class="checkout-block">
+        <label for="city" class="checkout-label">Ville *</label>
+        <div class="checkout-input">
+          <input type="text" name="billings[city]" value="<%= @user.city %>" form="formID" placeholder="Veuillez saisir les informations" >
+        </div>
+      </div>
+      <div class="checkout-block">
+        <label for="country" class="checkout-label">Pays *</label>
+        <div class="checkout-input">
+          <input type="text" name="billings[country]" value="<%= @user.country %>" form="formID" placeholder="Veuillez saisir les informations" >
+        </div>
+      </div>
+      <div class="checkout-block">
+        <label for="phone_number" class="checkout-label">Téléphone *</label>
+        <div class="checkout-input">
+          <input type="text" name="billings[phone_number]" value="<%= @user.phone_number %>" form="formID" placeholder="Veuillez saisir les informations" >
+        </div>
+      </div>
+    </div>
   </div>
 </div>
