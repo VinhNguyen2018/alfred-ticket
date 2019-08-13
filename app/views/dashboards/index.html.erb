@@ -5,13 +5,13 @@
       <h1>Mon compte</h1>
     </div>
     <div class="buttons-dashboard">
-      <button class="button-ghost active">Vos commandes</button>
-      <button class="button-ghost" href="#">Votre profil</button>
+      <button class="button-ghost active button-order">Vos commandes</button>
+      <button class="button-ghost button-profile" href="#">Votre profil</button>
     </div>
   </div>
 </div>
 
-<div class="container">
+<div class="container user-orders">
   <div id="user-orders">
     <h1>Informations de compte</h1>
     <div class="card-dashboard">
@@ -46,7 +46,7 @@
   </div>
 </div>
 
-<div class="container ">
+<div class="container user-infos hidden">
   <div id="user-infos">
     <form id="formID" action="/users" method="patch">
       <%= hidden_field_tag :authenticity_token, form_authenticity_token %>

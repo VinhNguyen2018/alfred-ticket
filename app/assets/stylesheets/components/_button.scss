@@ -42,6 +42,9 @@
 .button-ghost:hover {
   opacity: 1;
 }
+.button-ghost:focus {
+  outline: none;
+}
 
 .buttons-dashboard {
   margin:40px 0;
