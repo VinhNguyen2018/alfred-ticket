@@ -5,4 +5,8 @@ class UsersController < ApplicationController
     raise
     @user = current_user
   end
+
+  def create
+
+  end
 end

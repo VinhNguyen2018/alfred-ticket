@@ -1,0 +1,54 @@
+<%= render 'shared/navbar' %>
+<div class="row grey">
+  <div class="container wrapper">
+    <div>
+      <h1>Page ADMIN</h1>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <h1>Les concerts</h1>
+    <%= link_to new_concert_path do %>
+      <button class="btn btn-primary">Ajouter un concert</button>
+    <% end %>
+</div>
+<div class="container">
+  <div class="cards">
+    <% @concerts.each do |concert| %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= concert.photo %>)">
+        <%= concert.artist_name %>
+        <div class="card-content">
+          <%= link_to edit_category_path(concert.id) do %>
+            <button class="btn btn-warning">edit</button>
+          <% end %>
+          <%= link_to category_path(concert.id),method: :delete, data: { confirm: "Vous êtes sûr?"} do %>
+            <button class="btn btn-danger">delete</button>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+<div class="container">
+  <h1>Les salles de concerts</h1>
+    <%= link_to new_concert_hall_path do %>
+      <button class="btn btn-primary">Ajouter une salle de concert</button>
+    <% end %>
+</div>
+<div class="container">
+  <div class="cards">
+    <% @concert_halls.each do |hall| %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= hall.photo %>)">
+        <%= hall.name %>
+        <div class="card-content">
+          <%= link_to edit_concert_hall_path(hall.id) do %>
+            <button class="btn btn-warning">edit</button>
+          <% end %>
+          <%= link_to concert_hall_path(hall.id),method: :delete, data: { confirm: "Vous êtes sûr?"} do %>
+            <button class="btn btn-danger">delete</button>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

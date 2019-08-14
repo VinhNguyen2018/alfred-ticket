@@ -4,7 +4,7 @@ const scrollMoveNav = () => {
 
   window.addEventListener('scroll',(event) => {
     const scrollTop = event.path[1].scrollY;
-    if (scrollTop >= 1) {
+    if (scrollTop >= 75) {
         navbar.classList.add('fixed');
       } else {
         // sinon, on l'enlève

@@ -5,6 +5,22 @@ class ConcertEventPolicy < ApplicationPolicy
     end
   end
 
+  def new?
+    create?
+  end
+
+  def edit?
+    create?
+  end
+
+  def update?
+    create?
+  end
+
+  def destroy?
+    create?
+  end
+
   def index?
     true
   end
@@ -16,4 +32,5 @@ class ConcertEventPolicy < ApplicationPolicy
   def create?
     user.admin?
   end
+
 end

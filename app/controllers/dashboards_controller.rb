@@ -6,6 +6,13 @@ class DashboardsController < ApplicationController
     authorize @order, :dashboard?
   end
 
+  def admin
+    @concert = ConcertEvent.first
+    authorize @concert, :create?
+    @concerts = ConcertEvent.all
+    @concert_halls = ConcertHall.all
+  end
+
   private
 
   def set_orders

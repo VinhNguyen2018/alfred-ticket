@@ -7,6 +7,9 @@
     <div class="buttons-dashboard">
       <button class="button-ghost active button-order">Vos commandes</button>
       <button class="button-ghost button-profile" href="#">Votre profil</button>
+      <% if @user.admin? %>
+        <%= link_to "Admin", dashboard_admin_path, class: "button-ghost" %>
+      <% end %>
     </div>
   </div>
 </div>
