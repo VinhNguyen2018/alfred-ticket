@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_13_091447) do
+ActiveRecord::Schema.define(version: 2019_08_14_225305) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,11 +28,11 @@ ActiveRecord::Schema.define(version: 2019_08_13_091447) do
   create_table "concert_events", force: :cascade do |t|
     t.string "event_date"
     t.string "artist_name"
-    t.string "photo"
     t.bigint "concert_hall_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "event_end_booking"
+    t.string "photo"
     t.index ["concert_hall_id"], name: "index_concert_events_on_concert_hall_id"
   end
 
@@ -40,10 +40,10 @@ ActiveRecord::Schema.define(version: 2019_08_13_091447) do
     t.string "name"
     t.string "full_address"
     t.string "country"
-    t.string "photo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "city"
+    t.string "photo"
   end
 
   create_table "orders", force: :cascade do |t|
