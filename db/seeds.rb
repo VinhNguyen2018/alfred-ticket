@@ -28,7 +28,7 @@ francois = User.new(
     last_name: "Nguyen",
     gender: "M",
     address: "16 villa Gaudelet",
-    adress_bis: "",
+    address_bis: "",
     email: "francois@gmail.com",
     password: "ahahahah",
     country: "France",
@@ -44,7 +44,7 @@ andre = User.new(
     last_name: "Martins",
     gender: "M",
     address: "16 villa Gaudelet",
-    adress_bis: "",
+    address_bis: "",
     email: "andre@gmail.com",
     password: "ahahahah",
     country: "France",
@@ -78,15 +78,17 @@ beyonce = ConcertEvent.new(
 beyonce.remote_photo_url = beyonce_photo
 beyonce.save!
 
-ed_photo = "https://static.independent.co.uk/s3fs-public/thumbnails/image/2019/07/12/15/ed-sheeran.jpg?w968",
-ed_sheeran = ConcertEvent.new(
+ed_photo = "https://upload.wikimedia.org/wikipedia/commons/c/cd/Ed_Sheeran%2C_V_Festival_2014%2C_Chelmsford_%2814788797777%29.jpg",
+# encoded_url = URI.encode(ed_photo)
+# URI.parse(encoded_url)
+ed = ConcertEvent.new(
     event_date: "01/01/2020",
     artist_name: "Ed Sheeran",
     concert_hall: ConcertHall.first,
     event_end_booking: "2019-09-01"
   )
-ed_sheeran.remote_photo_url = ed_photo
-ed_sheeran.save!
+# ed.remote_photo_url = ed_photo
+ed.save!
 
 puts "Creating categories"
 

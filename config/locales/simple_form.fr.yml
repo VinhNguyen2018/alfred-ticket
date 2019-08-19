@@ -64,7 +64,3 @@ fr:
         default: "%d-%m-%Y"
         short: "%b %d"
         long: "%A %e %B %Y"
-
-    time:
-      formats:
-        short: "arrrround %H'ish"

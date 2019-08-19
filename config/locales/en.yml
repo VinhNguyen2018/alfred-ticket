@@ -33,4 +33,9 @@ en:
   number:
   format:
     separator: ','
-    delimiter: '.'
+    delimiter: ' '
+  date:
+  formats:
+    default: "%d-%m-%Y"
+    short: "%b %d"
+    long: "%A %e %B %Y"

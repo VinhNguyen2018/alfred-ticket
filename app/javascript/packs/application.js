@@ -36,6 +36,7 @@ import { toggle_hidden_button }from '../components/toggle_hidden_button';
 if (document.querySelector(".button-ghost")) {
   toggle_hidden_button();
 }
+
 // import { submitOrder } from '../components/submit_order';
 // if (document.querySelector(".submit-order")) {
 //   submitOrder();

@@ -18,7 +18,7 @@
       <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= concert.photo %>)">
         <%= concert.artist_name %>
         <div class="card-content">
-          <%= link_to edit_category_path(concert.id) do %>
+          <%= link_to edit_concert_path(concert.id) do %>
             <button class="btn btn-warning">edit</button>
           <% end %>
           <%= link_to category_path(concert.id),method: :delete, data: { confirm: "Vous êtes sûr?"} do %>

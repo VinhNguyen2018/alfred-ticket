@@ -3,7 +3,10 @@ class DashboardsController < ApplicationController
   def index
     @user = current_user
     @order = Order.find_by(user_id: @user)
-    authorize @order, :dashboard?
+    if @order.nil?
+    else
+      authorize @order, :dashboard?
+    end
   end
 
   def admin
