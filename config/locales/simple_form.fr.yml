@@ -17,6 +17,7 @@ fr:
 
       default_message: "Merci de corriger les erreurs signalées:"
 
+
     labels:
 
       defaults:
@@ -37,10 +38,10 @@ fr:
 
         gender: 'Genre'
 
-
         Signed_in_successfully: 'Connecté avec succès'
 
         Signed_out_successfully: 'Déconnecté avec succès'
+
 
     #   address:
 

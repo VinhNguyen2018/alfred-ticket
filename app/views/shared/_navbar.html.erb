@@ -17,9 +17,6 @@
           <%= link_to "FAQ & Contact", "#", class: "nav-link" %>
         </li>
         <li class="nav-item">
-          <div class="toolbar-divider"></div>
-        </li>
-        <li class="nav-item">
           <%= link_to current_user.first_name, dashboard_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
@@ -32,14 +29,11 @@
   <% else %>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
+        <li class="nav-item">
           <%= link_to "Concerts", concerts_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
           <%= link_to "FAQ & Contact", "#", class: "nav-link" %>
-        </li>
-        <li class="nav-item">
-          <div class="toolbar-divider"></div>
         </li>
         <li class="nav-item">
           <%= link_to "Compte", user_session_path, class: "nav-link" %>

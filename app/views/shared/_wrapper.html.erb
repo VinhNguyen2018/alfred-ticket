@@ -2,7 +2,8 @@
   <div class="container">
     <div class="col-8 left-column">
       <div style="margin-right:20px;">
-        <%= image_tag @concert.photo, class: "avatar-large" %>
+        <%= cl_image_tag @concert.photo ,
+      width: 400, height: 300, crop: :fill, class: "avatar-large" %>
       </div>
       <div>
         <h1 id="artist_name"><%= @concert.artist_name %></h1>

@@ -1,16 +1,29 @@
 //form from devise
 
 .form-session {
-  width: 30%;
+  width: 350px;
   background-color: white;
   padding:50px;
-  border-radius: 50%;
+  box-shadow: 1px 1px 5px #555;
+  border-radius:5px;
   color: black;
 }
 
-// .form-session h2 {
-//   color: black;
-// }
+.form-session-long {
+  width:50%;
+  background-color: white;
+  padding:25px;
+  margin:0 auto;
+  box-shadow: 1px 1px 5px #555;
+  border-radius:5px;
+  color: black;
+  h2 {
+    margin:20px;
+    color:green;
+  }
+}
+
+
 
 // .form-session p {
 //   color: black;

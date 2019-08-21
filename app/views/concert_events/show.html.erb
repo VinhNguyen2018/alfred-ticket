@@ -1,17 +1,13 @@
 <%= render 'shared/navbar' %>
 <%= render 'shared/wrapper' %>
 
-<% if policy(ConcertEvent).create? %>
-  <p>test</p>
-<% end %>
-
 <div class="container">
   <div class="row">
     <div class="col-6">
       <% if @concert.concert_hall.photo %>
           <div class="card-plan">
             <h2>Plan de salle</h2>
-            <%= image_tag @concert.concert_hall.photo, class: "img-plan" %>
+            <%= cl_image_tag @concert.concert_hall.photo, class: "img-plan" %>
           </div>
       <% end %>
       <div class="card-plan">
