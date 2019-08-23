@@ -32,11 +32,23 @@ fr:
 
         last_name: 'Nom'
 
-        first name: 'Prénom'
+        birth_date: 'Date de naissance'
 
-        last name: 'Nom'
+        address: 'Addresse'
 
-        gender: 'Genre'
+        address_bis: 'Addresse complémentaire'
+
+        zip_code: 'Code postal'
+
+        city: 'Ville'
+
+        country: 'Pays'
+
+        phone_number: 'Téléphone'
+
+        gender: 'Civilité'
+
+        biling_adress: "L'addresse de facturation est la même"
 
         Signed_in_successfully: 'Connecté avec succès'
 
