@@ -11,7 +11,10 @@ class DashboardsController < ApplicationController
 
   def admin
     @concert = ConcertEvent.first
-    authorize @concert, :create?
+    if @concert.nil?
+    else
+      authorize @concert, :create?
+    end
     @concerts = ConcertEvent.all
     @concert_halls = ConcertHall.all
   end
