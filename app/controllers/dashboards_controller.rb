@@ -12,7 +12,7 @@ class DashboardsController < ApplicationController
   def admin
     if ConcertEvent.first.nil?
       @concerts = policy_scope(ConcertEvent)
-      @concert_halls = ConcertHall.all
+      @concert_halls = @concerts
     else
       @concert = ConcertEvent.first
       authorize @concert, :create?
