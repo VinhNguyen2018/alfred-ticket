@@ -28,6 +28,7 @@ class CategoriesController < ApplicationController
     if @category.update(category_params)
       redirect_to dashboard_admin_path
     else
+      flash[:alert] = "Veuillez revérifier les informations"
       redirect_to edit_category_path(@category.id)
     end
   end

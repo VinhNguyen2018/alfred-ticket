@@ -1,7 +1,8 @@
 import "bootstrap";
 import { scrollMoveNav } from '../components/navbar_scroll';
+if (document.querySelector(".transparent")) {
 scrollMoveNav();
-
+}
 import { initializeClock } from '../components/countdown';
 import { getTimeRemaining } from '../components/countdown';
 if (document.getElementById('clockdiv')) {

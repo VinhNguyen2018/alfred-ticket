@@ -1,5 +1,5 @@
 <%= render 'shared/navbar' %>
-<div class="container">
+<div class="container padding-navbar">
   <div class="row">
     <% @concerts.each do |concert| %>
       <% end_event_date = Date.parse(concert.event_end_booking) %>
