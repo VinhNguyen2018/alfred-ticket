@@ -21,7 +21,7 @@
           <%= link_to edit_concert_path(concert.id) do %>
             <button class="btn btn-warning">edit</button>
           <% end %>
-          <%= link_to category_path(concert.id),method: :delete, data: { confirm: "Vous êtes sûr?"} do %>
+          <%= link_to concert_path(concert.id),method: :delete, data: { confirm: "Vous êtes sûr?"} do %>
             <button class="btn btn-danger">delete</button>
           <% end %>
         </div>

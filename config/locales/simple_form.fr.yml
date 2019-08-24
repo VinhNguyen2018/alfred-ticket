@@ -54,6 +54,12 @@ fr:
 
         Signed_out_successfully: 'Déconnecté avec succès'
 
+        name: 'Type de catégories'
+
+        price: 'Prix du concert (hors charges de gestion et HT)'
+
+        fast_delivery_fee: 'Prix option livraison rapide'
+
 
     #   address:
 
