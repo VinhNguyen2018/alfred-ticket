@@ -5,6 +5,14 @@ class CategoryPolicy < ApplicationPolicy
     end
   end
 
+  def new?
+    edit?
+  end
+
+  def create?
+    edit?
+  end
+
   def edit?
     user.admin?
   end
