@@ -43,7 +43,7 @@
 </div>
 <div class="container">
   <div class="cards">
-    <% if @concert_halls.all? &:nil? %>
+    <% if @concerts.all? &:nil? %>
     <% else %>
       <% @concert_halls.each do |hall| %>
         <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= hall.photo %>)">
