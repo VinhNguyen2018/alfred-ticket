@@ -5,16 +5,16 @@
 <div class="container">
 <%= simple_form_for :concert_hall, url: concert_hall_path(@hall.id), method: :patch do |f| %>
   <div class="form-group">
-    <%= f.input :hall_name, class: "form-control", value: "<%= @hall.hall_name %>" %>
+    <%= f.input :hall_name, input_html: {value: @hall.hall_name}, class: "form-control" %>
   </div>
   <div class="form-group">
-    <%= f.input :full_address, value: "<%= @hall.full_address %>", class: "form-control" %>
+    <%= f.input :full_address, input_html: {value: @hall.full_address}, class: "form-control" %>
   </div>
   <div class="form-group">
-    <%= f.input :country, value: "<%= @hall.country %>", class: "form-control" %>
+    <%= f.input :country, input_html: {value: @hall.country}, class: "form-control" %>
   </div>
   <div class="form-group">
-    <%= f.input :city, value: "<%= @hall.city  %>", class: "form-control" %>
+    <%= f.input :city, input_html: {value: @hall.city}, class: "form-control" %>
   </div>
   <div class="form-group">
     <%= f.file_field :photo %>
