@@ -10,8 +10,7 @@ class DashboardsController < ApplicationController
   end
 
   def admin
-    @concert = ConcertEvent.first
-    authorize @concert, :create?
+    @concert = ConcertEvent.first || NullObject.new
     @concerts = policy_scope(ConcertEvent)
     @concert_halls = ConcertHall.all
   end
