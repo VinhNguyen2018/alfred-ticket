@@ -36,6 +36,6 @@ class CategoriesController < ApplicationController
   private
 
   def category_params
-    params.require(:category).permit(:name, :price, :fast_delivery_fee, :concert_event_id)
+    params.require(:category).permit(:category_name, :price, :fast_delivery_fee, :concert_event_id)
   end
 end

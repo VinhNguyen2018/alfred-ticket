@@ -1,0 +1,27 @@
+<%= render 'shared/navbar' %>
+<div class="container padding-navbar">
+  <h1>Editer la salle de concert : <%= @hall.hall_name %></h1>
+</div>
+<div class="container">
+<%= simple_form_for :concert_hall, url: concert_hall_path(@hall.id), method: :patch do |f| %>
+  <div class="form-group">
+    <%= f.input :hall_name, class: "form-control", value: "<%= @hall.hall_name %>" %>
+  </div>
+  <div class="form-group">
+    <%= f.input :full_address, value: "<%= @hall.full_address %>", class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.input :country, value: "<%= @hall.country %>", class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.input :city, value: "<%= @hall.city  %>", class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.file_field :photo %>
+    <%= f.input :photo_cache, as: :hidden %>
+  </div>
+  <div class="form-group">
+    <%= f.button :submit, class: "btn btn-primary" %>
+  </div>
+<% end %>
+</div>

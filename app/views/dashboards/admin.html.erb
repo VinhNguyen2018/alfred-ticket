@@ -47,7 +47,7 @@
     <% else %>
       <% @concert_halls.each do |hall| %>
         <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= hall.photo %>)">
-          <%= hall.name %>
+          <%= hall.hall_name %>
           <div class="card-content">
             <%= link_to edit_concert_hall_path(hall.id) do %>
               <button class="btn btn-warning">edit</button>

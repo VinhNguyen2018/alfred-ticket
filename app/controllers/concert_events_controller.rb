@@ -1,6 +1,6 @@
 class ConcertEventsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
-  before_action :set_concert, only: [:show, :destroy]
+  before_action :set_concert, only: [:show, :edit, :destroy]
 
   def index
     @concerts = policy_scope(ConcertEvent)
@@ -11,9 +11,9 @@ class ConcertEventsController < ApplicationController
     @end_date = @concert.event_end_booking
   end
 
-  # def edit
+  def edit
 
-  # end
+  end
 
   def update
     @concert = ConcertEvent.find(params[:id])

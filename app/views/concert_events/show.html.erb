@@ -58,7 +58,7 @@
         <div class="border-top selected">
           <label class="inline">
               <input id="selected-category" type="radio" name="category[id]" value="<%= @concert.categories.first.id %>" form="formID" checked/>
-              <div for="" class="left-category selected-category"><%= @concert.categories.first.name %></div>
+              <div for="" class="left-category selected-category"><%= @concert.categories.first.category_name %></div>
               <div class="right-category selected-price"><%= humanized_money(@concert.categories.first.price) %><%= currency_symbol %></div>
           </label>
         </div>
@@ -66,7 +66,7 @@
           <div class="border-top">
             <label class="inline">
                 <input id="selected-category" type="radio" name="category[id]" value="<%= concert.id %>" form="formID"/>
-                <div class="left-category"><%= concert.name %></div>
+                <div class="left-category"><%= concert.category_name %></div>
                 <div class="right-category"><%= humanized_money(concert.price) %><%= currency_symbol %></div>
             </label>
           </div>

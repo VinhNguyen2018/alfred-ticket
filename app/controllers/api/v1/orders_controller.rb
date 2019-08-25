@@ -18,6 +18,6 @@ class Api::V1::OrdersController < ActionController::Base
 
   def find_concert_and_category
     @concert = ConcertEvent.find_by(artist_name: params[:artist_name])
-    @category = Category.find_by(name: params[:category], concert_event_id: @concert.id)
+    @category = Category.find_by(category_name: params[:category], concert_event_id: @concert.id)
   end
 end

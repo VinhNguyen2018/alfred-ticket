@@ -54,11 +54,21 @@ fr:
 
         Signed_out_successfully: 'Déconnecté avec succès'
 
-        name: 'Type de catégories'
+        category_name: 'Type de catégories'
+
+        hall_name: 'Nom de la salle de concert'
+
+        full_address: 'Addresse complète'
 
         price: 'Prix du concert (hors charges de gestion et HT)'
 
         fast_delivery_fee: 'Prix option livraison rapide'
+
+        artist_name: "Nom d'artiste"
+
+        event_date: "Date d'évènement"
+
+        event_end_booking: "Date de fin de réservation"
 
 
     #   address:

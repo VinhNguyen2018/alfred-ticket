@@ -1,5 +1,5 @@
 <%= render 'shared/navbar' %>
-<div class="container">
+<div class="container padding-navbar">
   <h1>Editer un concert</h1>
   <%= link_to new_concert_hall_path do %>
       <button class="btn btn-primary">Ajouter une salle de concert</button>
@@ -11,13 +11,13 @@
     <%= f.input :artist_name, input_html: {value: @concert.artist_name}, class: "form-control" %>
   </div>
   <div class="form-group">
-    <%= f.input :event_date, as: :string, placeholder: "YYYY-MM-DD", class: "form-control" %>
+    <%= f.input :event_date, as: :string, placeholder: "YYYY-MM-DD",input_html: {value: @concert.event_date} , class: "form-control" %>
   </div>
   <div class="form-group">
-    <%= f.input :event_end_booking, as: :string, placeholder: "YYYY-MM-DD", class: "form-control" %>
+    <%= f.input :event_end_booking, as: :string, placeholder: "YYYY-MM-DD",input_html: {value: @concert.event_end_booking}, class: "form-control" %>
   </div>
   <div class="form-group">
-    <%= f.collection_select :concert_hall_id, ConcertHall.all, :id, :name, {:prompt => "Choisissez un hall"}, class: "form-control"   %>
+    <%= f.collection_select :concert_hall_id, ConcertHall.all, :id, :hall_name, {:prompt => "Choisissez un hall"}, class: "form-control"   %>
   </div>
   <div class="form-group">
     <%= f.file_field :photo %>

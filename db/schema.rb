@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_25_083749) do
+ActiveRecord::Schema.define(version: 2019_08_25_112402) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 2019_08_25_083749) do
   end
 
   create_table "categories", force: :cascade do |t|
-    t.string "name"
+    t.string "category_name"
     t.integer "price_cents", default: 0, null: false
     t.bigint "concert_event_id"
     t.datetime "created_at", null: false
@@ -50,7 +50,7 @@ ActiveRecord::Schema.define(version: 2019_08_25_083749) do
   end
 
   create_table "concert_halls", force: :cascade do |t|
-    t.string "name"
+    t.string "hall_name"
     t.string "full_address"
     t.string "country"
     t.datetime "created_at", null: false
