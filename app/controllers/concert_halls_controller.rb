@@ -11,7 +11,7 @@ class ConcertHallsController < ApplicationController
     if @hall.save
       redirect_to dashboard_admin_path
     else
-      redirect_to concert_halls_path
+      redirect_to new_concert_hall_path
     end
   end
 
