@@ -8,7 +8,7 @@
     <%= f.collection_select :concert_event_id, ConcertEvent.all, :id, :artist_name, {:prompt => "Choisissez un artiste"} ,class: "form-control" %>
   </div>
   <div class="form-group">
-    <%= f.input :name, collection: ['CAT1','CAT2','CAT3','CAT4','Fosse','Carré Or'], class: "form-control" %>
+    <%= f.input :category_name, collection: ['CAT1','CAT2','CAT3','CAT4','Fosse','Carré Or'], class: "form-control" %>
   </div>
   <div class="form-group">
     <%= f.input :price ,class: "form-control" %>
