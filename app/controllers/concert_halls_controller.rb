@@ -19,7 +19,12 @@ class ConcertHallsController < ApplicationController
   end
 
   def update
-
+    @hall.update(hall_params)
+    if @hall.save
+      redirect_to dashboard_admin_path
+    else
+      redirect_to edit_concert_hall_path(@hall.id)
+    end
   end
 
   def destroy

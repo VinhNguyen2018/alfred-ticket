@@ -1,10 +1,9 @@
 class ConcertEventsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
-  before_action :set_concert, only: [:show, :edit, :destroy]
+  before_action :set_concert, only: [:show, :edit,:update, :destroy]
 
   def index
     @concerts = policy_scope(ConcertEvent)
-    # @concerts = ConcertEvent.all
   end
 
   def show
@@ -12,12 +11,15 @@ class ConcertEventsController < ApplicationController
   end
 
   def edit
-
   end
 
   def update
-    @concert = ConcertEvent.find(params[:id])
     @concert.update(concert_params)
+    if @concert.save
+      redirect_to dashboard_admin_path
+    else
+      redirect_to edit_concert_path(@concert.id)
+    end
   end
 
   def new
