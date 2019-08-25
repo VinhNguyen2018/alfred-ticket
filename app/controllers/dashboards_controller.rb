@@ -17,7 +17,6 @@ class DashboardsController < ApplicationController
     end
     @concerts = ConcertEvent.all
     @concert_halls = ConcertHall.all
-    end
   end
 
   private
