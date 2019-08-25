@@ -15,7 +15,7 @@ class DashboardsController < ApplicationController
     else
       authorize @concert, :create?
     end
-    @concerts = ConcertEvent.all
+    @concerts = policy_scope(ConcertEvent)
     @concert_halls = ConcertHall.all
   end
 
