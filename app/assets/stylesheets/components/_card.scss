@@ -102,6 +102,12 @@
   margin-bottom:0;
 }
 
+.card-plan h3 {
+  padding:1.5rem 3rem 0rem;
+  font-size:22px;
+  margin-bottom:0;
+}
+
 .checkout-block {
   padding:0rem 3rem 0rem;
   margin-bottom:10px;
@@ -170,11 +176,13 @@
 
 .left-category {
   flex-grow: 1;
+  font-size:16px;
   padding-left:1rem;
 }
 
 .right-category {
   float:right;
+  font-size:16px;
 }
 
 .selected-quantity {

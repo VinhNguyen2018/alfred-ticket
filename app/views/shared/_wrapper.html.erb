@@ -7,14 +7,14 @@
         width: 200, height: 200, :gravity=>"faces", crop: :fill, class: "avatar-large" %>
         </div>
         <div>
-          <h1 id="artist_name"><%= @concert.artist_name %></h1>
-          <h2><%= @concert.event_date %></h2>
+          <h3 id="artist_name"><%= @concert.artist_name %></h3>
+          <h4><%= @concert.event_date %></h4>
           <div><%= @concert.concert_hall.hall_name %></div>
           <div><%= @concert.concert_hall.city %>, <%= @concert.concert_hall.country %></div>
         </div>
       </div>
       <div class="right-column">
-        <h4>Fermeture du service dans :</h4>
+        <h5>Fermeture du service dans :</h5>
         <div id="deadline" style="display:none"><%= @end_date  %></div>
         <div id="clockdiv">
           <div>
