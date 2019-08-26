@@ -3,9 +3,10 @@
   color:white;
 }
 
-.wrapper-container {
-  padding-top: 5px;
-  padding-bottom: 25px;
+.wrapper-container-clock {
+  width:100%;
+  display:grid;
+  grid-template-columns:1fr 1fr;
 }
 
 .left-column {
@@ -15,4 +16,15 @@
 
 .right-column {
   padding-top:20px;
+  text-align: right;
+}
+
+@media (max-width: 768px) {
+
+.wrapper-container-clock {
+  // width:100%;
+  // display:grid;
+  grid-template-columns:1fr;
+}
+
 }

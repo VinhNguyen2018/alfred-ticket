@@ -1,36 +1,38 @@
 <div class="row grey padding-navbar">
   <div class="container">
-    <div class="col-8 left-column">
-      <div style="margin-right:20px;">
-        <%= cl_image_tag @concert.photo ,
-      width: 400, height: 300, crop: :fill, class: "avatar-large" %>
+    <div class="wrapper-container-clock">
+      <div class="left-column">
+        <div style="margin-right:20px;">
+          <%= cl_image_tag @concert.photo ,
+        width: 200, height: 200, :gravity=>"faces", crop: :fill, class: "avatar-large" %>
+        </div>
+        <div>
+          <h1 id="artist_name"><%= @concert.artist_name %></h1>
+          <h2><%= @concert.event_date %></h2>
+          <div><%= @concert.concert_hall.hall_name %></div>
+          <div><%= @concert.concert_hall.city %>, <%= @concert.concert_hall.country %></div>
+        </div>
       </div>
-      <div>
-        <h1 id="artist_name"><%= @concert.artist_name %></h1>
-        <h2><%= @concert.event_date %></h2>
-        <div><%= @concert.concert_hall.hall_name %></div>
-        <div><%= @concert.concert_hall.city %>, <%= @concert.concert_hall.country %></div>
-      </div>
-    </div>
-    <div class="col-4 right-column">
-      <h4>Fermeture du service dans :</h4>
-      <div id="deadline" style="display:none"><%= @end_date  %></div>
-      <div id="clockdiv">
-        <div>
-          <span class="days"></span>
-          <div class="smalltext">JOURS</div>
-        </div>
-        <div>
-          <span class="hours"></span>
-          <div class="smalltext">HEURES</div>
-        </div>
-        <div>
-          <span class="minutes"></span>
-          <div class="smalltext">MIN</div>
-        </div>
-        <div>
-          <span class="seconds"></span>
-          <div class="smalltext">SEC</div>
+      <div class="right-column">
+        <h4>Fermeture du service dans :</h4>
+        <div id="deadline" style="display:none"><%= @end_date  %></div>
+        <div id="clockdiv">
+          <div>
+            <span class="days"></span>
+            <div class="smalltext">JOURS</div>
+          </div>
+          <div>
+            <span class="hours"></span>
+            <div class="smalltext">HEURES</div>
+          </div>
+          <div>
+            <span class="minutes"></span>
+            <div class="smalltext">MIN</div>
+          </div>
+          <div>
+            <span class="seconds"></span>
+            <div class="smalltext">SEC</div>
+          </div>
         </div>
       </div>
     </div>
