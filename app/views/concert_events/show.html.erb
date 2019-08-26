@@ -2,14 +2,16 @@
 <%= render 'shared/wrapper' %>
 
 <div class="container">
-  <div class="row">
-    <div class="col-6">
-      <% if @concert.concert_hall.photo %>
-          <div class="card-plan">
-            <h2>Plan de salle</h2>
-            <%= cl_image_tag @concert.concert_hall.photo, class: "img-plan" %>
-          </div>
-      <% end %>
+  <div class="card-container-show">
+    <% if @concert.concert_hall.photo %>
+      <div class="card-block-plan">
+        <div class="card-plan">
+          <h2>Plan de salle</h2>
+          <%= cl_image_tag @concert.concert_hall.photo, class: "img-plan" %>
+        </div>
+      </div>
+    <% end %>
+    <div class="card-block-info">
       <div class="card-plan">
         <h2>Informations complémentaires</h2>
         <ul>
@@ -48,7 +50,7 @@
         </ul>
       </div>
     </div>
-    <div class="col-6">
+    <div class="card-block-order">
       <div class="card-plan">
         <h2>Prix et catégories disponibles :</h2>
         <div class="sub-title">(Ces prix incluent nos frais de réservation et la TVA)</div>

@@ -4,6 +4,27 @@
   grid-gap:20px;
 }
 
+.card-container-show {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  grid-gap:20px;
+}
+
+.card-block-plan {
+  grid-column: 1 / span 1;
+  grid-row: 1 / span 1;
+}
+
+.card-block-info {
+  grid-column: 1 / span 1;
+  grid-row: 2 / span 1;
+}
+
+.card-block-order {
+  grid-column: 2 / span 1;
+  grid-row: 1 / span 1;
+}
+
 .card-container {
   height:350px;
   width:300px;
@@ -255,6 +276,24 @@
 .cards-concerts {
   grid-template-columns:1fr;
   margin: auto;
+}
+
+.card-container-show {
+  grid-template-columns:1fr;
+  margin: auto;
+}
+
+.card-block-plan {
+  grid-row: 2 / span 1;
+}
+
+.card-block-info {
+  grid-row: 3 / span 1;
+}
+
+.card-block-order {
+  grid-column: 1 / span 1;
+  grid-row: 1 / span 1;
 }
 
 }
