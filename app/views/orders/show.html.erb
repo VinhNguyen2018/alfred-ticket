@@ -1,14 +1,14 @@
 <%= render 'shared/navbar' %>
 <%= render 'shared/wrapper' %>
+<div id="unit-price" style="display:none;"><%= @category.price %></div>
+<div id="quantity-order"style="display:none;"><%= @order.quantity %></div>
 
 <div class="container">
-  <div class="row" style="width:100%;">
-    <form id="formID" action="/payments" method="post">
-      <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-    </form>
-    <div id="unit-price" style="display:none;"><%= @category.price %></div>
-    <div id="quantity-order"style="display:none;"><%= @order.quantity %></div>
-    <div class="col-6">
+  <div class="card-container-show">
+    <div class="card-block-plan">
+      <form id="formID" action="/payments" method="post">
+        <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+      </form>
       <div class="card-plan">
         <div class="checkout-block">
           <h2>Information personnelles</h2>
@@ -119,64 +119,64 @@
         </div>
       </div>
     </div>
-    <div class="col-6">
-        <div class="card-plan">
-          <div class="checkout-block">
-            <h2>Détails de la commande</h2>
+    <div class="card-block-order">
+      <div class="card-plan">
+        <div class="checkout-block">
+          <h2>Détails de la commande</h2>
+        </div>
+        <div class="checkout-block">
+          <div class="checkout-title">Artiste: </div>
+          <div class="checkout-content"><%= @concert.artist_name %></div>
+        </div>
+        <div class="checkout-block">
+          <div class="checkout-title">Date: </div>
+          <div class="checkout-content"><%= @event_date %></div>
+        </div>
+        <div class="checkout-block">
+          <div class="checkout-title">Salle/stade: </div>
+          <div class="checkout-content"><%= @concert.concert_hall.hall_name %></div>
+        </div>
+        <div class="checkout-block">
+          <div class="checkout-title">Nombres de billet(s): </div>
+          <div class="checkout-content"><%= @order.quantity %> x <%= @category.category_name %> (<%= humanized_money(@category.price) %><%= currency_symbol %>) = <%= humanized_money(@order.quantity*@category.price) %><%= currency_symbol %></div>
+        </div>
+        <div class="checkout-block">
+          <div class="checkout-title">Frais de réservation:<span class="infobulle" aria-label="Les frais de gestion sont calculés par billet."><i class="fas fa-info-circle"></i></span></div>
+          <div class="checkout-content"><%= @order.quantity %> x <%= humanized_money(@management_fees) %><%= currency_symbol %></div>
+        </div>
+        <div class="checkout-block">
+          <div class="checkout-title">Type de livraison </div>
+          <div class="checkout-content">
+            <input id="fast-delivery" type="radio" name="payments[delivery]" value="fast" form="formID">
+            <label for="fast-delivery">Fast delivery: 5,00<%= currency_symbol %><span class="infobulle" aria-label="Le service fast delivery vous assure la réception des places dans un délai maximum de 2 semaines après la mise en vente officielle."><i class="fas fa-info-circle"></i></span></label>
           </div>
-          <div class="checkout-block">
-            <div class="checkout-title">Artiste: </div>
-            <div class="checkout-content"><%= @concert.artist_name %></div>
-          </div>
-          <div class="checkout-block">
-            <div class="checkout-title">Date: </div>
-            <div class="checkout-content"><%= @event_date %></div>
-          </div>
-          <div class="checkout-block">
-            <div class="checkout-title">Salle/stade: </div>
-            <div class="checkout-content"><%= @concert.concert_hall.hall_name %></div>
-          </div>
-          <div class="checkout-block">
-            <div class="checkout-title">Nombres de billet(s): </div>
-            <div class="checkout-content"><%= @order.quantity %> x <%= @category.category_name %> (<%= humanized_money(@category.price) %><%= currency_symbol %>) = <%= humanized_money(@order.quantity*@category.price) %><%= currency_symbol %></div>
-          </div>
-          <div class="checkout-block">
-            <div class="checkout-title">Frais de réservation:<span class="infobulle" aria-label="Les frais de gestion sont calculés par billet."><i class="fas fa-info-circle"></i></span></div>
-            <div class="checkout-content"><%= @order.quantity %> x <%= humanized_money(@management_fees) %><%= currency_symbol %></div>
-          </div>
-          <div class="checkout-block">
-            <div class="checkout-title">Type de livraison </div>
-            <div class="checkout-content">
-              <input id="fast-delivery" type="radio" name="payments[delivery]" value="fast" form="formID">
-              <label for="fast-delivery">Fast delivery: 5,00<%= currency_symbol %><span class="infobulle" aria-label="Le service fast delivery vous assure la réception des places dans un délai maximum de 2 semaines après la mise en vente officielle."><i class="fas fa-info-circle"></i></span></label>
-            </div>
-            <div class="checkout-content">
-              <input id="standard-delivery" type="radio" name="payments[delivery]" value="fast" form="formID" checked>
-              <label for="standard-delivery">Standard: 0,00<%= currency_symbol %><span class="infobulle" aria-label="La livraison standard vous assure la réception des billets dans un délai maximum de 2 semaines avant le début du concert."><i class="fas fa-info-circle"></i></span></label>
-            </div>
-          </div>
-          <div class="checkout-block">
-            <div class="checkout-title">Support de livraison</div>
-            <div class="checkout-content">E-billet: 0,00<%= currency_symbol %></div>
-          </div>
-
-          <div class="checkout-block">
-            <div class="checkout-title">TVA</div>
-            <div class="checkout-content">
-              <span class="TVA"><%= humanized_money((@order.quantity*@category.price+@management_fees)*20/100) %></span>
-              <%= currency_symbol %>
-            </div>
-          </div>
-          <div class="checkout-block">
-            <div class="checkout-title">Total TTC</div>
-            <div class="checkout-content">
-              <span class="TTC">
-                <%= humanized_money((@order.quantity*@category.price+@management_fees)*1.2)  %>
-              </span>
-              <%= currency_symbol %>
-            </div>
+          <div class="checkout-content">
+            <input id="standard-delivery" type="radio" name="payments[delivery]" value="fast" form="formID" checked>
+            <label for="standard-delivery">Standard: 0,00<%= currency_symbol %><span class="infobulle" aria-label="La livraison standard vous assure la réception des billets dans un délai maximum de 2 semaines avant le début du concert."><i class="fas fa-info-circle"></i></span></label>
           </div>
         </div>
+        <div class="checkout-block">
+          <div class="checkout-title">Support de livraison</div>
+          <div class="checkout-content">E-billet: 0,00<%= currency_symbol %></div>
+        </div>
+
+        <div class="checkout-block">
+          <div class="checkout-title">TVA</div>
+          <div class="checkout-content">
+            <span class="TVA"><%= humanized_money((@order.quantity*@category.price+@management_fees)*20/100) %></span>
+            <%= currency_symbol %>
+          </div>
+        </div>
+        <div class="checkout-block">
+          <div class="checkout-title">Total TTC</div>
+          <div class="checkout-content">
+            <span class="TTC">
+              <%= humanized_money((@order.quantity*@category.price+@management_fees)*1.2)  %>
+            </span>
+            <%= currency_symbol %>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

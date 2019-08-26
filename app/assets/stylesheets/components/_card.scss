@@ -5,6 +5,7 @@
 }
 
 .card-container-show {
+  margin: 0 auto;
   display:grid;
   grid-template-columns:1fr 1fr;
   grid-gap:20px;
@@ -281,6 +282,7 @@
 .card-container-show {
   grid-template-columns:1fr;
   margin: auto;
+  width: 90%;
 }
 
 .card-block-plan {
