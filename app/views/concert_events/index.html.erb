@@ -1,11 +1,10 @@
 <%= render 'shared/navbar' %>
 <div class="container padding-navbar">
-  <div class="row">
+  <div class="cards-concerts">
     <% @concerts.each do |concert| %>
       <% end_event_date = Date.parse(concert.event_end_booking) %>
       <% if end_event_date >= Date.current %>
         <%= link_to concert_path(concert.id) do  %>
-          <div class="col-6">
             <div class="card-container" style="background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url('<%= image_url(concert.photo)%>');">
               <div class="card-info">
                 <h2><%= concert.artist_name %></h2>
@@ -35,9 +34,8 @@
                 </div>
               </div>
             </div>
-          </div>
         <% end %>
-      <% end %>
+    <% end %>
     <% end %>
   </div>
 </div>
