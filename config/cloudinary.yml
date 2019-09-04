@@ -1,0 +1,5 @@
+development:
+  cloud_name: "vinhlabrioche"
+
+production:
+  cloud_name: "vinhlabrioche"
