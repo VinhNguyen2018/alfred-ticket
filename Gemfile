@@ -23,9 +23,11 @@ gem 'country_select'
 gem 'ed25519', '>= 1.2', '< 2.0'
 gem 'bcrypt_pbkdf', '>= 1.0', '< 2.0'
 
+
 group :development do
   gem 'web-console', '>= 3.3.0'
   gem "capistrano", "~> 3.10", require: false
+  gem 'capistrano-rbenv', '~> 2.1'
   gem "capistrano-rails", "~> 1.4", require: false
 end
 
