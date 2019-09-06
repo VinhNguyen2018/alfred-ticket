@@ -19,12 +19,14 @@ default: &default
   encoding: unicode
   # For details on connection pooling, see Rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
+  host: localhost
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
 development:
   <<: *default
   database: alfred-ticket_development
-
+  username: vinhlabrioche
+  password: Brioche01
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
   # When left blank, postgres will use the default role. This is
@@ -58,7 +60,8 @@ development:
 test:
   <<: *default
   database: alfred-ticket_test
-
+  username: vinhlabrioche
+  password: Brioche01
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
 # ever seen by anyone, they now have access to your database.
@@ -81,5 +84,5 @@ test:
 production:
   <<: *default
   database: alfred-ticket_production
-  username: alfred-ticket
-  password: <%= ENV['alfred-ticket_DATABASE_PASSWORD'] %>
+  username: vinhlabrioche
+  password: Brioche01
