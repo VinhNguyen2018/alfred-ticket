@@ -5,7 +5,7 @@ set :application, "alfred-ticket"
 set :repo_url, "git@github.com:VinhNguyen2018/alfred-ticket.git"
 
 set :deploy_to, '/home/user/alfredticket'
-
+set :default_env, { path: "~/.rbenv/shims:~/.rbenv/bin:$PATH" }
 append :linked_files, "config/master.key"
 
 namespace :deploy do
@@ -21,7 +21,7 @@ namespace :deploy do
 end
 
 append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', '.bundle', 'public/system', 'public/uploads'
-append :linked_files, 'config/database.yml', 'config/secrets.yml'
+# append :linked_files, 'config/database.yml', 'config/secrets.yml'
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
