@@ -1,7 +1,7 @@
 # config valid for current version and patch releases of Capistrano
 lock "~> 3.11.1"
 
-set :application, "alfred-ticket"
+set :application, "ruby-app"
 set :repo_url, "git@github.com:VinhNguyen2018/alfred-ticket.git"
 
 set :deploy_to, '/home/ruby-app/www/'

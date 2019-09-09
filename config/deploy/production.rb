@@ -9,11 +9,11 @@
 role :app,        %w(51.91.10.84)
 role :web,        %w(51.91.10.84)
 role :db,         %w(51.91.10.84), primary: true
-set :application, 'alfred-ticket'
+set :application, 'ruby-app'
 
 server '51.91.10.84', user: fetch(:application), roles: %w(web app db), primary: true
 
-set :full_app_name, 'alfred-ticket'
+set :full_app_name, 'ruby-app'
 set :rails_env,   'production'
 
 namespace :deploy do
