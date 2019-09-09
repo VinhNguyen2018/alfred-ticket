@@ -6,8 +6,37 @@
 # server "example.com", user: "deploy", roles: %w{app db web}, my_property: :my_value
 # server "example.com", user: "deploy", roles: %w{app web}, other_property: :other_value
 # server "db.example.com", user: "deploy", roles: %w{db}
+role :app,        %w(51.91.10.84)
+role :web,        %w(51.91.10.84)
+role :db,         %w(51.91.10.84), primary: true
+set :application, 'alfred-ticket'
 
-server '51.91.10.84', user: 'root', roles: %w{app web db}, ssh_options: { forward_agent: true }
+server '51.91.10.84', user: fetch(:application), roles: %w(web app db), primary: true
+
+set :full_app_name, 'alfred-ticket'
+set :rails_env,   'production'
+
+namespace :deploy do
+  desc 'Restart application'
+  task :stop do
+    on roles(:app), in: :sequence, wait: 10 do
+      # command that is used to stop Unicorn goes here
+      execute 'sudo systemctl stop ruby-app.service'
+    end
+  end
+
+  task :start do
+    on roles(:app), in: :sequence, wait: 10 do
+      # command that is used to start Unicorn goes here
+      execute 'sudo systemctl start ruby-app.service'
+    end
+  end
+
+  after :publishing, :stop
+  after :stop, :start
+end
+
+# server '51.91.10.84', user: 'root', roles: %w{app web db}, ssh_options: { forward_agent: true }
 
 # role-based syntax
 # ==================

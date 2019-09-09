@@ -4,7 +4,7 @@ lock "~> 3.11.1"
 set :application, "alfred-ticket"
 set :repo_url, "git@github.com:VinhNguyen2018/alfred-ticket.git"
 
-set :deploy_to, '/home/user/alfredticket'
+set :deploy_to, '/home/ruby-app/www/'
 set :rbenv_type, :user
 set :rbenv_ruby, '2.5.3'
 set :rbenv_prefix, "RBENV_ROOT=#{fetch(:rbenv_path)} RBENV_VERSION=#{fetch(:rbenv_ruby)} #{fetch(:rbenv_path)}/bin/rbenv exec"
@@ -12,6 +12,8 @@ set :rbenv_map_bins, %w{rake gem bundle ruby rails}
 set :rbenv_roles, :all # default value
 
 append :linked_files, "config/master.key"
+set :linked_files, %w(config/database.yml config/unicorn.rb)
+set :linked_dirs, %w(log vendor/bundle tmp/sockets tmp/pids tmp/cache)
 
 namespace :deploy do
   namespace :check do
