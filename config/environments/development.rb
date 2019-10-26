@@ -59,4 +59,8 @@ Rails.application.configure do
   # Use an evented file watcher to asynchronously detect changes in source code,
   # routes, locales, etc. This feature depends on the listen gem.
   # config.file_watcher = ActiveSupport::EventedFileUpdateChecker
+  #adyen configuration
+  Adyen.configuration.environment = 'test'
+  Adyen.configuration.api_username = 'ws@Company.AlfredTicket'
+  Adyen.configuration.api_password = ENV.fetch('ADYEN_API_PASSWORD')
 end
