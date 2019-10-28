@@ -12,6 +12,41 @@
   }
 }
 
+.fb-button {
+  padding: 8px;
+  font-size: 18px;
+  // width: 50px;
+  text-align: center;
+  text-decoration: none !important;
+  background: #3B5998;
+}
+
+.fb-button a {
+  color: white !important;
+}
+
+.fb-button:hover {
+  color: white !important;
+  text-decoration: none !important;
+  opacity: 0.7;
+}
+
+.login-btn {
+  color: white !important;
+  margin-bottom:10px;
+  padding: 8px 24px;
+  border-radius: 4px;
+  font-weight: bold;
+  background: linear-gradient(#167FFB, #0F60C4);
+  transition: background 0.3s ease;
+  border: 1px solid #0F60C4;
+}
+
+.login-btn:hover {
+  background: linear-gradient(#147EFF, #0F67DA);
+  color: white !important;
+}
+
 .fullwidth {
   width:100%;
   margin-left:0;
