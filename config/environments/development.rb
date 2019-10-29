@@ -61,6 +61,6 @@ Rails.application.configure do
   # config.file_watcher = ActiveSupport::EventedFileUpdateChecker
   #adyen configuration
   Adyen.configuration.environment = 'test'
-  Adyen.configuration.api_username = 'ws@Company.AlfredTicket'
-  Adyen.configuration.api_password = ENV.fetch('ADYEN_API_PASSWORD')
+  Adyen.configuration.api_username = Rails.application.credentials.ADYEN_MERCHANT_ACCOUNT
+  Adyen.configuration.api_password = Rails.application.credentials.ADYEN_API_PASSWORD
 end
