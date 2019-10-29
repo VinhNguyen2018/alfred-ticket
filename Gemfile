@@ -26,7 +26,6 @@ gem 'bcrypt_pbkdf', '>= 1.0', '< 2.0'
 gem 'unicorn'
 gem 'adyen', '~> 1.6'
 gem 'omniauth-facebook'
-gem 'dotenv-rails', groups: [:development, :test]
 
 group :development do
   gem 'web-console', '>= 3.3.0'
