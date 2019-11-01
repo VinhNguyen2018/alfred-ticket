@@ -1,4 +1,4 @@
-require 'adyen-ruby-api-library'
+require 'adyen'
 
 class Payment < ApplicationRecord
   belongs_to :order
