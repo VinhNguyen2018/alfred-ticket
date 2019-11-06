@@ -4,7 +4,7 @@ const calculateFastDelivery = () => {
   const quantity = parseInt(document.getElementById("quantity-order").innerText);
   const price = parseFloat(parseFloat(document.getElementById("unit-price").innerText.replace(',','.')).toFixed(2));
   const managementFees = parseFloat(parseFloat(quantity*price*40/100).toFixed(2));
-  const FastDeliveryFees = 5;
+  const FastDeliveryFees = parseInt(document.getElementById("fast-delivery-fee").innerText);
   const vatAmount = parseFloat(parseFloat((quantity*price+managementFees+FastDeliveryFees)*20/100).toFixed(2));
   const totalPrice = parseFloat(quantity*price+managementFees+FastDeliveryFees+vatAmount).toFixed(2);
   const frVatAmount = (vatAmount + '').replace('.',',');

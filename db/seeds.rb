@@ -78,12 +78,10 @@ beyonce = ConcertEvent.new(
 beyonce.remote_photo_url = beyonce_photo
 beyonce.save!
 
-ed_photo = "https://upload.wikimedia.org/wikipedia/commons/c/cd/Ed_Sheeran%2C_V_Festival_2014%2C_Chelmsford_%2814788797777%29.jpg",
-# encoded_url = URI.encode(ed_photo)
-# URI.parse(encoded_url)
+ed_photo = "https://res.cloudinary.com/vinhlabrioche/image/upload/v1550251024/bx0ezdtt1kqy0m2gwl3e.png"
 ed = ConcertEvent.new(
     event_date: "01/01/2020",
-    artist_name: "Ed Sheeran",
+    artist_name: "Tommy le chat",
     concert_hall: ConcertHall.first,
     event_end_booking: "2020-09-01"
   )

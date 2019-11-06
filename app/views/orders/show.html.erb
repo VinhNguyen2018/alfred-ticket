@@ -1,7 +1,9 @@
 <%= render 'shared/navbar' %>
 <%= render 'shared/wrapper' %>
 <div id="unit-price" style="display:none;"><%= @category.price %></div>
-<div id="quantity-order"style="display:none;"><%= @order.quantity %></div>
+<div id="quantity-order" style="display:none;"><%= @order.quantity %></div>
+<div id="fast-delivery-fee" style="display:none;"><%= @category.fast_delivery_fee %></div>
+
 
 <div class="container">
   <div class="card-container-show">
@@ -187,16 +189,16 @@
           <div class="checkout-title">Type de livraison </div>
           <div class="checkout-content">
             <input id="fast-delivery" type="radio" name="payments[delivery]" value="fast" form="formID">
-            <label for="fast-delivery">Fast delivery: 5,00<%= currency_symbol %><span class="infobulle" aria-label="Le service fast delivery vous assure la réception des places dans un délai maximum de 2 semaines après la mise en vente officielle."><i class="fas fa-info-circle"></i></span></label>
+            <label for="fast-delivery">Fast delivery: <%= humanized_money(@category.fast_delivery_fee) %> <%= currency_symbol %><span class="infobulle" aria-label="Le service fast delivery vous assure la réception des places dans un délai maximum de 2 semaines après la mise en vente officielle."><i class="fas fa-info-circle"></i></span></label>
           </div>
           <div class="checkout-content">
             <input id="standard-delivery" type="radio" name="payments[delivery]" value="fast" form="formID" checked>
-            <label for="standard-delivery">Standard: 0,00<%= currency_symbol %><span class="infobulle" aria-label="La livraison standard vous assure la réception des billets dans un délai maximum de 2 semaines avant le début du concert."><i class="fas fa-info-circle"></i></span></label>
+            <label for="standard-delivery">Standard: 0<%= currency_symbol %><span class="infobulle" aria-label="La livraison standard vous assure la réception des billets dans un délai maximum de 2 semaines avant le début du concert."><i class="fas fa-info-circle"></i></span></label>
           </div>
         </div>
         <div class="checkout-block">
           <div class="checkout-title">Support de livraison</div>
-          <div class="checkout-content">E-billet: 0,00<%= currency_symbol %></div>
+          <div class="checkout-content">E-billet: 0<%= currency_symbol %></div>
         </div>
 
         <div class="checkout-block">
