@@ -68,12 +68,12 @@ accor_hotel_arena.save!
 
 
 puts "Creating concert events"
-beyonce_photo = "https://beninwebtv.com/wp-content/uploads/2019/06/beyonce_-e1513614279669.jpg"
+beyonce_photo = "https://res.cloudinary.com/vinhlabrioche/image/upload/v1565872749/pt3k2olosb2tuu1eyyfy.jpg"
 beyonce = ConcertEvent.new(
     event_date: "01/01/2020",
     artist_name: "Beyoncé",
     concert_hall: ConcertHall.first,
-    event_end_booking: "2019-01-09"
+    event_end_booking: "2020-01-09"
   )
 beyonce.remote_photo_url = beyonce_photo
 beyonce.save!
@@ -85,9 +85,9 @@ ed = ConcertEvent.new(
     event_date: "01/01/2020",
     artist_name: "Ed Sheeran",
     concert_hall: ConcertHall.first,
-    event_end_booking: "2019-09-01"
+    event_end_booking: "2020-09-01"
   )
-# ed.remote_photo_url = ed_photo
+ed.remote_photo_url = ed_photo
 ed.save!
 
 puts "Creating categories"
