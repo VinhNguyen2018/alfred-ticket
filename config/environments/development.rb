@@ -60,7 +60,7 @@ Rails.application.configure do
   # routes, locales, etc. This feature depends on the listen gem.
   # config.file_watcher = ActiveSupport::EventedFileUpdateChecker
   #adyen configuration
-  Adyen.configuration.environment = 'test'
+  Adyen.configuration.environment = :test
   Adyen.configuration.api_username = Rails.application.credentials.ADYEN_MERCHANT_ACCOUNT
   Adyen.configuration.api_password = Rails.application.credentials.ADYEN_API_PASSWORD
 end
