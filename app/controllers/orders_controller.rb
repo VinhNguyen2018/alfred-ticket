@@ -1,3 +1,5 @@
+require 'adyen-ruby-api-library'
+
 class OrdersController < ApplicationController
   before_action :find_concert_and_category, only: [ :create ]
 
@@ -10,7 +12,7 @@ class OrdersController < ApplicationController
     @event_date = @concert.event_date
     @category = @order.category
     @management_fees = @order.quantity * @category.price * 40 / 100
-    @test
+    test_adyen
   end
 
   def create

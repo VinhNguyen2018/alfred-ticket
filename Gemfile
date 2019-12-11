@@ -27,6 +27,7 @@ gem 'unicorn'
 gem 'adyen', '~> 1.6'
 gem 'omniauth-facebook'
 gem 'rails_12factor'
+gem "faraday"
 
 group :development do
   gem 'web-console', '>= 3.3.0'
