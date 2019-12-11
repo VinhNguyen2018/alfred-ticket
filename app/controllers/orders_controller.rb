@@ -10,6 +10,7 @@ class OrdersController < ApplicationController
     @event_date = @concert.event_date
     @category = @order.category
     @management_fees = @order.quantity * @category.price * 40 / 100
+    @test
   end
 
   def create
@@ -30,5 +31,23 @@ class OrdersController < ApplicationController
     @category = Category.find(params[:category][:id])
     @concert = ConcertEvent.find(@category.concert_event_id)
     authorize @concert
+  end
+
+  def test_adyen
+    adyen = Adyen::Client.new
+    adyen.api_key = ENV["ADYEN_API_KEY"]
+    adyen.env = :test
+
+    response = adyen.checkout.payment_methods({
+      :merchantAccount => Rails.application.credentials.ADYEN_MERCHANT_ACCOUNT,
+      :countryCode => 'FR',
+      :amount => {
+        :currency => 'EUR',
+        :value => 1000
+      },
+      :channel => 'Web'
+    })
+
+    @test = response
   end
 end
