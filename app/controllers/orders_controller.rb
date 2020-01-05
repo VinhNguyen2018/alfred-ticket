@@ -1,4 +1,7 @@
-require 'adyen-ruby-api-library'
+require 'adyen'
+adyen = Adyen::Client.new
+adyen.api_key = Rails.application.credentials.ADYEN_API_KEY
+adyen.env = :test
 
 class OrdersController < ApplicationController
   before_action :find_concert_and_category, only: [ :create ]
@@ -36,10 +39,6 @@ class OrdersController < ApplicationController
   end
 
   def test_adyen
-    adyen = Adyen::Client.new
-    adyen.api_key = ENV["ADYEN_API_KEY"]
-    adyen.env = :test
-
     response = adyen.checkout.payment_methods({
       :merchantAccount => Rails.application.credentials.ADYEN_MERCHANT_ACCOUNT,
       :countryCode => 'FR',
@@ -49,7 +48,6 @@ class OrdersController < ApplicationController
       },
       :channel => 'Web'
     })
-
     @test = response
   end
 end
