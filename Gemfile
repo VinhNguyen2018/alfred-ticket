@@ -28,6 +28,7 @@ gem 'adyen', '~> 1.6'
 gem 'omniauth-facebook'
 gem 'rails_12factor'
 gem "faraday"
+gem "rack", ">= 2.0.8"
 
 group :development do
   gem 'web-console', '>= 3.3.0'
